@@ -594,7 +594,6 @@
   display:block;
   flex:1 1 0;
   min-width:0;
-  height:165px;
   padding:0;
   overflow:hidden;
   border-radius:6px;
@@ -770,17 +769,10 @@
     transition:none
   }
 }
-#cjpa-v11 #cjpa-panel-people .cjpa-wanted {
-  display:flex;
-  flex-direction:column
-}
 #cjpa-v11 #cjpa-panel-people .cjpa-heading {
   flex:0 0 auto
 }
 #cjpa-v11 #cjpa-panel-people #cjpa-prelinks {
-  display:flex;
-  flex-direction:column;
-  flex:1;
   min-height:0
 }
 #cjpa-v11 #cjpa-panel-people .cjpa-prelink {
@@ -814,7 +806,6 @@
   overflow:visible
 }
 #cjpa-v11 .cjpa-tabs button {
-  grid-template-columns:34px minmax(0,1fr) 18px;
   border-radius:0;
   padding:14px 10px;
   transition:color .2s
@@ -1598,10 +1589,6 @@
     left:66px
   }
 }
-#cjpa-v11 #cjpa-panel-forum .cjpa-staff {
-  height:var(--cj-staff-height);
-  flex:0 0 var(--cj-staff-height)
-}
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card,#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-label,#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-img-staff,#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-info {
   height:var(--cj-staff-height)
 }
@@ -1792,10 +1779,6 @@
   padding:20px;
   --cj-staff-height:220px
 }
-#cjpa-v11 #cjpa-panel-forum .cjpa-annonces {
-  margin-top:auto;
-  padding-top:16px
-}
 #cjpa-v11 #cjpa-panel-forum .cjpa-mind-title {
   font-size:14px;
   letter-spacing:1px;
@@ -1853,12 +1836,7 @@
 #cjpa-v11 #cjpa-panel-index #cjpa-updated {
   margin-bottom:24px
 }
-#cjpa-v11 #cjpa-panel-people #cjpa-prelinks {
-  gap:8px
-}
 #cjpa-v11 #cjpa-panel-people .cjpa-prelink {
-  min-height:46px;
-  flex:none;
   grid-template-columns:140px minmax(0,1fr)
 }
 #cjpa-v11 .cjpa-tabs strong {
@@ -2019,5 +1997,48 @@
   }
   #cjpa-v11 #cjpa-panel-people .cjpa-wanted {
     grid-column:1
+  }
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff {
+  flex:1 0 220px;
+  height:auto;
+  min-height:220px
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card {
+  height:auto;
+  min-height:220px
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-label, #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-img-staff, #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-info {
+  height:100%
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-annonces {
+  flex:none;
+  margin-top:16px;
+  padding-top:0
+}
+#cjpa-v11 .cjpa-tabs button {
+  grid-template-columns:34px minmax(0,1fr)
+}
+#cjpa-v11 .cjpa-tabs button>b {
+  display:none
+}
+#cjpa-v11 #cjpa-panel-people .cjpa-wanted {
+  display:flex;
+  flex-direction:column;
+  min-width:0
+}
+#cjpa-v11 #cjpa-panel-people #cjpa-prelinks {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:8px
+}
+#cjpa-v11 #cjpa-panel-people .cjpa-prelink {
+  flex:1 0 46px;
+  min-height:46px
+}
+@media(max-width:750px) {
+  #cjpa-v11 #cjpa-panel-people .cjpa-prelink {
+    flex:none
   }
 }
