@@ -1979,10 +1979,6 @@
   padding-right:0;
   font-size:17px
 }
-#cjpa-v11 .cjpa-organisation-body {
-  display:grid;
-  gap:12px
-}
 #cjpa-v11 .cjpa-organisation .cjpa-organisation-icon {
   display:block;
   width:100%;
@@ -1992,9 +1988,6 @@
 #cjpa-v11 .cjpa-organisation-copy {
   min-width:0;
   overflow-wrap:anywhere
-}
-#cjpa-v11 .cjpa-organisation-copy h3 {
-  line-height:1.25
 }
 #cjpa-v11 .cjpa-organisation-copy p {
   text-align:left
@@ -2048,8 +2041,6 @@
 }
 #cjpa-v11 .cjpa-organisation-body {
   flex:1;
-  align-items:stretch;
-  grid-template-columns:100px minmax(0,1fr);
   min-height:100px
 }
 #cjpa-v11 .cjpa-organisation .cjpa-organisation-icon {
@@ -2059,14 +2050,6 @@
   aspect-ratio:auto;
   object-fit:cover;
   align-self:stretch
-}
-#cjpa-v11 .cjpa-organisation-copy {
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start
-}
-#cjpa-v11 .cjpa-organisation-copy>.cjpa-text-link {
-  margin-top:auto
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-info {
   overflow:hidden;
@@ -2200,24 +2183,73 @@
   box-sizing:border-box
 }
 #cjpa-v11 .cjpa-organisation-image {
-  position:relative;
   min-width:0;
-  min-height:100px;
   overflow:hidden;
   border-radius:10px
 }
 #cjpa-v11 .cjpa-organisation-image .cjpa-organisation-icon {
-  position:absolute;
-  inset:0;
   display:block;
-  width:100%;
-  height:100%;
-  min-height:0;
   max-width:100%;
-  max-height:100%;
-  object-fit:cover;
   margin:0;
   border-radius:inherit
+}
+#cjpa-v11 .cjpa-organisation-body {
+  position:relative;
+  display:grid;
+  grid-template-columns:100px minmax(0,1fr);
+  gap:12px;
+  align-items:stretch
+}
+#cjpa-v11 .cjpa-organisation-copy {
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:6px;
+  min-height:112px
+}
+#cjpa-v11 .cjpa-organisation-copy h3 {
+  margin:0;
+  font-size:16px;
+  line-height:1.2
+}
+#cjpa-v11 .cjpa-organisation-copy p {
+  margin:0;
+  font-size:13px;
+  line-height:1.35
+}
+#cjpa-v11 .cjpa-organisation-copy>.cjpa-text-link {
+  margin:0;
+  margin-top:auto;
+  padding-top:2px;
+  line-height:1.2
+}
+#cjpa-v11 .cjpa-organisation-image {
+  position:relative;
+  align-self:stretch;
+  min-height:112px;
+  height:auto
+}
+#cjpa-v11 .cjpa-organisation-image .cjpa-organisation-icon {
+  position:absolute;
+  inset:0;
+  width:100%!important;
+  height:100%!important;
+  min-height:0;
+  max-height:none;
+  object-fit:cover
+}
+#cjpa-v11 .cjpa-organisation-body>.cjpa-organisation-icon {
+  position:absolute;
+  inset:0 auto 0 0;
+  width:100px!important;
+  height:100%!important;
+  min-height:0;
+  max-height:none;
+  object-fit:cover;
+  margin:0
+}
+#cjpa-v11 .cjpa-organisation-body>.cjpa-organisation-copy {
+  grid-column:2
 }
 /* Correctif compatible avec les anciens et nouveaux numéros d'onglets. */
 #cjpa-v11 .cjpa-tabs button[role="tab"]>span:not(:first-child) {
