@@ -622,10 +622,7 @@
   position:absolute;
   top:0;
   left:0;
-  height:165px;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .35s ease .2s,transform .5s ease .2s,visibility .2s
+  height:165px
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:hover .cjpa-staff-info,#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:focus-within .cjpa-staff-info {
   opacity:1;
@@ -1996,7 +1993,6 @@
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card {
   min-height:0;
   height:auto;
-  overflow:visible;
   transition:none
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:hover,#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:focus-within {
@@ -2013,7 +2009,6 @@
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-info {
   box-sizing:border-box;
   width:calc(200% + 8px);
-  background:var(--cj-bg,#f5f2ef);
   border-radius:6px
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:nth-child(even) .cjpa-staff-info {
@@ -2108,7 +2103,6 @@
   flex-basis:308px
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card {
-  perspective:900px;
   cursor:pointer;
   outline-offset:3px
 }
@@ -2116,34 +2110,38 @@
   inset:0;
   width:100%;
   height:100%;
-  backface-visibility:hidden;
-  transition:transform .5s ease;
   opacity:1;
   visibility:visible;
   box-sizing:border-box
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-label {
-  transform:rotateY(0deg);
-  z-index:2
+  transform:none;
+  z-index:0
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-info {
-  transform:rotateY(180deg);
+  transform:translateX(-8px);
+  opacity:0;
+  visibility:hidden;
   pointer-events:none;
   padding:8px;
   overflow:auto;
-  z-index:1
+  z-index:2;
+  transition:opacity .2s ease,transform .2s ease,visibility .2s
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:hover .cjpa-label {
   width:100%;
   filter:grayscale(1)
 }
-#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card.is-flipped .cjpa-label {
-  transform:rotateY(-180deg);
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card.is-revealed .cjpa-label {
+  transform:none;
   width:100%
 }
-#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card.is-flipped .cjpa-staff-info {
-  transform:rotateY(0deg);
-  pointer-events:auto
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card.is-revealed .cjpa-staff-info {
+  transform:none;
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transition-delay:.2s
 }
 #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-nom-staff {
   font-size:15px;
@@ -2181,6 +2179,47 @@
 }
 @media(prefers-reduced-motion:reduce) {
   #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-label,#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-info {
+    transition:none
+  }
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card {
+  overflow:hidden;
+  isolation:isolate
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:before {
+  content:'';
+  position:absolute;
+  z-index:1;
+  width:180%;
+  height:380%;
+  left:-190%;
+  top:-140%;
+  border-radius:0 46% 46% 0;
+  background:var(--cj-two);
+  transform:rotate(-9deg);
+  transition:left .65s cubic-bezier(.2,.8,.2,1),transform .75s ease;
+  pointer-events:none
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card.is-revealed:before {
+  left:-35%;
+  transform:rotate(9deg)
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-info {
+  background:transparent;
+  color:#fff
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-info * {
+  color:inherit
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card .cjpa-staff-mp a {
+  background:rgba(0,0,0,.25);
+  color:#fff
+}
+[data-color-scheme="dark"] #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:before {
+  background:#303ba6
+}
+@media(prefers-reduced-motion:reduce) {
+  #cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:before,#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card.is-revealed .cjpa-staff-info {
     transition:none
   }
 }
