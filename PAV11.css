@@ -512,7 +512,6 @@
   position:relative;
   display:block;
   flex:1 1 0;
-  min-width:0;
   padding:0;
   border-radius:6px;
   background:transparent
@@ -2013,16 +2012,8 @@
   overflow-wrap:anywhere
 }
 .cjpa-viewport {
-  width:100%;
-  max-width:100%;
-  min-width:0;
-  overflow-x:auto;
   overscroll-behavior-x:contain;
   -webkit-overflow-scrolling:touch
-}
-.cjpa-viewport #cjpa-v11 {
-  min-width:960px;
-  box-sizing:border-box
 }
 .cjpa-viewport:focus-visible {
   outline:2px solid #7c89ed;
@@ -2149,4 +2140,62 @@
   font-size:13px;
   line-height:1.3;
   margin-top:6px
+}
+.cjpa-viewport #cjpa-v11 {
+  margin-left:auto;
+  margin-right:auto
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-community {
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff {
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card {
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box;
+  margin:0
+}
+#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:hover,#cjpa-v11 #cjpa-panel-forum .cjpa-staff-card:focus-within {
+  width:100%;
+  max-width:100%
+}
+.cjpa-viewport {
+  display:block;
+  box-sizing:border-box;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  contain:inline-size;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:0;
+  margin:0
+}
+.cjpa-viewport #cjpa-v11 {
+  width:100%;
+  min-width:760px;
+  max-width:1100px;
+  box-sizing:border-box;
+  margin:0 auto;
+  padding-left:0;
+  padding-right:0
+}
+#cjpa-v11 .cjpa-panel {
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box
+}
+#cjpa-v11 .cjpa-panel>*,#cjpa-v11 .cjpa-essentials-column,#cjpa-v11 .cjpa-research-column,#cjpa-v11 .cjpa-wanted-column {
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box
 }
