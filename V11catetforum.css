@@ -1,4 +1,4 @@
-/*
+/* 
    SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
   
 */
@@ -477,20 +477,23 @@ html[data-forum-layout="columns"] .cjcat .cjcat-activity {
 
 html[data-forum-layout="columns"] .cjcat .cjcat-lastrow {
     flex-direction:row;
-    align-items:stretch;
+    align-items:center;
     gap:10px;
-    min-height:76px;
+    min-height:64px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-lastpost {
     flex:1;
-    text-align:right;
-    background:var(--neutralDark);
-    padding:8px 10px;
-    border-radius:5px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    min-width:0;
+    width:auto;
+    text-align:left;
+    background:transparent;
+    padding:0;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    display:block;
+    line-height:1.4;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
@@ -526,7 +529,11 @@ html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-c
 
 /* Avatar et métadonnées : même composition que le forum actuel. */
 html[data-forum-layout="columns"] .cjcat .cjcat-avatar img {
-    width:58px!important; height:76px!important; max-width:58px!important; max-height:76px!important; border-radius:5px;
+    width:48px!important;
+    height:64px!important;
+    max-width:48px!important;
+    max-height:64px!important;
+    border-radius:5px;
 }
 html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;
