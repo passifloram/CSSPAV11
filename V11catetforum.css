@@ -1,6 +1,5 @@
 /* 
    SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
-  
 */
 /* RÉGLAGES — dimensions facilement modifiables. */
 .cjcat {
@@ -411,8 +410,8 @@ html[data-forum-layout="columns"] .cjcat .cjcat-list {
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-card {
-    grid-template-columns:78px 22px minmax(0,1fr);
-    grid-template-rows:1fr auto auto;
+    grid-template-columns:100px minmax(0,1fr);
+    grid-template-rows:1fr auto;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-card:not(.cjcat-has-picture) .cjcat-editorial {
@@ -420,13 +419,13 @@ html[data-forum-layout="columns"] .cjcat .cjcat-card:not(.cjcat-has-picture) .cj
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-picture {
-    grid-column:1 / 3;
+    grid-column:1;
     grid-row:1;
     min-height:150px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-editorial {
-    grid-column:3;
+    grid-column:2;
     grid-row:1;
     padding:12px;
 }
@@ -440,13 +439,11 @@ html[data-forum-layout="columns"] .cjcat .cjcat-title-rule {
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-counters {
-    grid-column:1;
-    grid-row:2;
     flex-direction:column;
     align-items:flex-start;
     justify-content:center;
     margin:0;
-    padding:8px 0 8px 12px;
+    padding:0;
     gap:5px;
 }
 
@@ -468,18 +465,18 @@ html[data-forum-layout="columns"] .cjcat .cjcat-stat.cjcat-large-number strong {
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-activity {
-    grid-column:2 / -1;
-    grid-row:2;
-    padding:8px 12px 8px 4px;
+    padding:0;
     margin:0;
     border:0;
+    min-width:0;
+    justify-content:flex-start;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-lastrow {
     flex-direction:row;
     align-items:center;
-    gap:10px;
-    min-height:64px;
+    gap:8px;
+    min-height:54px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-lastpost {
@@ -529,12 +526,24 @@ html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-c
 
 /* Avatar et métadonnées : même composition que le forum actuel. */
 html[data-forum-layout="columns"] .cjcat .cjcat-avatar img {
-    width:48px!important;
-    height:64px!important;
-    max-width:48px!important;
-    max-height:64px!important;
+    width:42px!important;
+    height:54px!important;
+    max-width:42px!important;
+    max-height:54px!important;
     border-radius:5px;
 }
 html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;
+}
+
+/* Compteurs et activité partagent une seule rangée sous la description. */
+html[data-forum-layout="columns"] .cjcat .cjcat-metadata {
+    display:grid;
+    grid-template-columns:minmax(76px,.85fr) minmax(0,1.15fr);
+    gap:10px;
+    align-items:center;
+    margin-top:8px;
+}
+html[data-forum-layout="columns"] .cjcat .cjcat-has-picture .cjcat-metadata {
+    grid-template-columns:76px minmax(0,1fr);
 }
