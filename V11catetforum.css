@@ -1,4 +1,4 @@
-/* CONCRETE JUNGLE — CATÉGORIES V3
+/* CONCRETE JUNGLE — CATÉGORIES V4
    SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
    La palette vient du forum. Toutes les règles sont limitées à .cjcat.
    Les hauteurs restent automatiques : aucun texte descriptif n’est coupé.
@@ -15,6 +15,9 @@
     margin: 0 0 40px;
     min-width: 0;
     clear: both;
+    position: relative;
+    isolation: isolate;
+    padding-top: 24px;
 }
 
 .cjcat, .cjcat * {
@@ -41,15 +44,26 @@
 
 /* TITRES — une numérotation générée automatiquement. */
 .cjcat .cjcat-heading {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 18px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    position:relative;
+    min-height:62px;
+    margin-bottom:0;
+    padding-left:150px;
+    z-index:0;
 }
 
 .cjcat .cjcat-number {
-    font: italic 20px Georgia, serif;
-    color: var(--one);
+    position:absolute;
+    left:0;
+    top:-22px;
+    font:italic 128px/.95 Georgia,serif;
+    letter-spacing:-10px;
+    color:var(--one);
+    opacity:.6;
+    pointer-events:none;
+    z-index:-1;
 }
 
 .cjcat .cjcat-title {
@@ -72,17 +86,13 @@
     flex: 1;
 }
 
-.cjcat .cjcat-count {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-    text-transform: uppercase;
-}
-
 .cjcat .cjcat-list {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--cat-gap);
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:var(--cat-gap);
+    position:relative;
+    z-index:1;
+    align-items:stretch;
 }
 
 /* LIGNES — image / texte / compteurs / dernier message. */
@@ -103,7 +113,7 @@
     padding: 0;
     gap: 0;
     background: var(--neutral);
-    border: 1px solid var(--cat-line);
+    border: 0;
     border-radius: var(--cat-radius);
     overflow: hidden;
     box-shadow: none;
@@ -213,7 +223,7 @@
     flex-direction:row;
     align-items:center;
     gap:12px;
-    margin-top:auto;
+    margin-top:0;
     padding:16px 0 0;
 }
 
@@ -485,4 +495,11 @@ html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-c
         transition: none;
     }
 
+}
+
+/* Même emplacement réservé aux sous-forums, même quand il est vide.
+   La hauteur peut grandir si le contenu le demande ; aucun texte tronqué. */
+.cjcat .cjcat-footer-empty {
+    visibility: hidden;
+    min-height: 40px;
 }
