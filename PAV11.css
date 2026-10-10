@@ -2333,3 +2333,16 @@
   padding-right: 16px;
   flex-shrink: 0;
 }
+
+/* ONGLETS — rapproche les titres de leur sous-titre.
+   Le titre sur une ligne s’aligne en bas de sa rangée, comme la dernière
+   ligne des deux autres titres. Le numéro et la flèche restent en place. */
+#cjpa-v11 .cjpa-tabs button > strong {
+    align-self: end;
+    margin-bottom: 0;
+}
+#cjpa-v11 .cjpa-tabs button > .cjpa-small,
+#cjpa-v11 .cjpa-tabs button[role="tab"] > span:not(:first-child) {
+    align-self: start;
+    margin-top: 0;
+}
