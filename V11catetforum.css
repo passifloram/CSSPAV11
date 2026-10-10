@@ -366,7 +366,7 @@
     white-space: nowrap;
 }
 
-.cjcat .cjcat-subforums a:hover {
+/* .cjcat .cjcat-subforums a:hover {
     color: var(--one);
     text-decoration: underline;
 }
@@ -405,6 +405,7 @@
 }
 
 /* DEUX COLONNES — commande et mémorisation du switch existant. */
+/*
 html[data-forum-layout="columns"] .cjcat .cjcat-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -546,4 +547,5 @@ html[data-forum-layout="columns"] .cjcat .cjcat-metadata {
 }
 html[data-forum-layout="columns"] .cjcat .cjcat-has-picture .cjcat-metadata {
     grid-template-columns:76px minmax(0,1fr);
-}
+} 
+
