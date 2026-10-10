@@ -2346,3 +2346,40 @@
     align-self: start;
     margin-top: 0;
 }
+
+/* LIENS DE LA PA — soulignement depuis le centre.
+   Organisation, tous les sujets actifs et recherche RP.
+   Les emplacements désactivés restent sans effet jusqu’à ajout d’un lien. */
+#cjpa-v11 .cjpa-text-link[href],
+#cjpa-v11 .cjpa-rp-links a[href]:not([aria-disabled="true"]) > span {
+    text-decoration: none;
+    background-image: linear-gradient(var(--cj-one), var(--cj-one));
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 0% 1px;
+    transition: background-size .28s ease, color .2s ease;
+}
+#cjpa-v11 .cjpa-text-link[href]:is(:hover, :focus-visible),
+#cjpa-v11 .cjpa-rp-links a[href]:not([aria-disabled="true"]):is(:hover, :focus-visible) > span {
+    color: var(--cj-one);
+    background-size: 100% 1px;
+    text-decoration: none;
+}
+#cjpa-v11 .cjpa-research-column .cjpa-text-link[href]:is(:hover, :focus-visible),
+#cjpa-v11 .cjpa-rp-links a[href]:is(:hover, :focus-visible) {
+    text-decoration: none;
+}
+#cjpa-v11 .cjpa-rp-links a[href]:not([aria-disabled="true"]):is(:hover, :focus-visible) > em {
+    color: var(--cj-one);
+}
+#cjpa-v11 .cjpa-text-link[href]:focus-visible,
+#cjpa-v11 .cjpa-rp-links a[href]:focus-visible {
+    outline: 2px solid var(--cj-one);
+    outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+    #cjpa-v11 .cjpa-text-link[href],
+    #cjpa-v11 .cjpa-rp-links a[href] > span {
+        transition: none;
+    }
+}
