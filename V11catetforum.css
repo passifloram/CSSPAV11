@@ -1,9 +1,8 @@
-/* 
+/*
    SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
+
 */
 /* RÉGLAGES — dimensions facilement modifiables. */
-/* 
-
 .cjcat {
     --cat-image-width: 164px;
     --cat-lastpost-width: 200px;
@@ -66,7 +65,7 @@
     z-index:-1;
 }
 
-/* .cjcat .cjcat-title {
+.cjcat .cjcat-title {
     min-width: 0;
 }
 
@@ -123,7 +122,7 @@
     grid-template-columns: var(--cat-image-width) minmax(0, 1fr) var(--cat-lastpost-width);
 }
 
-/* .cjcat .cjcat-picture {
+.cjcat .cjcat-picture {
     position: relative;
     min-height: 145px;
     overflow: hidden;
@@ -368,7 +367,7 @@
     white-space: nowrap;
 }
 
-/* .cjcat .cjcat-subforums a:hover {
+.cjcat .cjcat-subforums a:hover {
     color: var(--one);
     text-decoration: underline;
 }
@@ -407,7 +406,6 @@
 }
 
 /* DEUX COLONNES — commande et mémorisation du switch existant. */
-/*
 html[data-forum-layout="columns"] .cjcat .cjcat-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -549,5 +547,15 @@ html[data-forum-layout="columns"] .cjcat .cjcat-metadata {
 }
 html[data-forum-layout="columns"] .cjcat .cjcat-has-picture .cjcat-metadata {
     grid-template-columns:76px minmax(0,1fr);
-} 
+}
 
+/* MODE LIGNES : l’image couvre aussi la hauteur du pied de carte.
+   Le bandeau des sous-forums commence à droite de l’image. */
+html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-picture {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-footer {
+    grid-column: 2 / -1;
+    grid-row: 2;
+}
