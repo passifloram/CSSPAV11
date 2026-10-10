@@ -1,7 +1,5 @@
-/* CONCRETE JUNGLE — CATÉGORIES V4
+/* 
    SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
-   La palette vient du forum. Toutes les règles sont limitées à .cjcat.
-   Les hauteurs restent automatiques : aucun texte descriptif n’est coupé.
 */
 /* RÉGLAGES — dimensions facilement modifiables. */
 .cjcat {
@@ -11,7 +9,7 @@
     --cat-radius: 12px;
     --cat-line: color-mix(in srgb, var(--textColor) 18%, transparent);
     color: var(--textColor);
-    font: 14px/1.55 Arial, sans-serif;
+    font: 14px/1.4 var(--font, "Work Sans", sans-serif);
     margin: 0 0 40px;
     min-width: 0;
     clear: both;
@@ -75,7 +73,7 @@
     padding: 0;
     background: none;
     color: var(--textColor);
-    font: 700 29px/1.2 Georgia, serif;
+    font: 700 29px/1.2 var(--font, "Work Sans", sans-serif);
     text-transform: uppercase;
     letter-spacing: .5px;
 }
@@ -125,7 +123,7 @@
 
 .cjcat .cjcat-picture {
     position: relative;
-    min-height: 170px;
+    min-height: 145px;
     overflow: hidden;
 }
 
@@ -145,7 +143,7 @@
 }
 
 .cjcat .cjcat-editorial {
-    padding:20px;
+    padding:14px 16px;
     min-width:0;
     display:flex;
     flex-direction:column;
@@ -156,15 +154,15 @@
     align-items:center;
     justify-content:space-between;
     gap:12px;
-    padding-bottom:14px;
+    padding-bottom:9px;
 }
 
 .cjcat .cjcat-name {
-    font:700 21px/1.2 Georgia,serif;
+    font:700 21px/1.2 var(--font, "Work Sans", sans-serif);
     text-transform:uppercase;
     color:var(--one);
     overflow-wrap:anywhere;
-    padding-bottom:7px;
+    padding-bottom:5px;
     border-bottom:2px solid var(--one);
 }
 
@@ -184,7 +182,7 @@
 .cjcat .cjcat-description {
     display: flow-root;
     font-size: 13px;
-    line-height: 1.55;
+    line-height: 1.4;
     text-align: justify;
     overflow-wrap: anywhere;
 }
@@ -224,7 +222,7 @@
     align-items:center;
     gap:12px;
     margin-top:0;
-    padding:16px 0 0;
+    padding:9px 0 0;
 }
 
 .cjcat .cjcat-stat {
@@ -260,7 +258,7 @@
     justify-content:center;
     background:none;
     padding:0 18px;
-    margin:20px 0;
+    margin:14px 0;
     border-left:1px solid var(--cat-line);
     min-width:0;
 }
@@ -299,7 +297,7 @@
     background: none;
     overflow: visible;
     text-align: left;
-    font: 11px/1.6 Arial, sans-serif;
+    font: 11px/1.4 var(--font, "Work Sans", sans-serif);
     overflow-wrap: anywhere;
 }
 
@@ -326,8 +324,8 @@
     background:transparent;
     border-top:1px solid var(--cat-line);
     min-width:0;
-    min-height:40px;
-    padding:7px 18px;
+    min-height:32px;
+    padding:3px 14px;
 }
 
 .cjcat .cjcat-links-label {
@@ -362,7 +360,7 @@
     border: 0;
     background: none;
     color: var(--one);
-    font: bold 11px/1.5 Arial, sans-serif;
+    font: bold 11px/1.35 var(--font, "Work Sans", sans-serif);
     letter-spacing: .4px;
     text-transform: uppercase;
     white-space: nowrap;
@@ -398,7 +396,7 @@
     background: transparent;
     color: var(--one);
     cursor: pointer;
-    font: 20px/26px Arial, sans-serif;
+    font: 20px/26px var(--font, "Work Sans", sans-serif);
 }
 
 .cjcat .cjcat-arrow:disabled {
@@ -421,11 +419,11 @@ html[data-forum-layout="columns"] .cjcat .cjcat-card:not(.cjcat-has-picture) .cj
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-picture {
-    min-height: 180px;
+    min-height: 150px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-editorial {
-    padding: 15px;
+    padding:12px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-name {
@@ -438,7 +436,7 @@ html[data-forum-layout="columns"] .cjcat .cjcat-title-rule {
 
 html[data-forum-layout="columns"] .cjcat .cjcat-counters {
     flex-direction:row;
-    padding:14px 0 0;
+    padding:9px 0 0;
     gap:12px;
 }
 
@@ -458,7 +456,7 @@ html[data-forum-layout="columns"] .cjcat .cjcat-stat.cjcat-large-number strong {
 
 html[data-forum-layout="columns"] .cjcat .cjcat-activity {
     grid-column:1 / -1;
-    padding:12px 16px;
+    padding:8px 12px;
     margin:0;
     border-left:0;
     border-top:1px solid var(--cat-line);
@@ -483,7 +481,7 @@ html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
 html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-child(odd))::after {
     content: "";
     display: block;
-    min-height: 180px;
+    min-height: 150px;
     border-radius: var(--cat-radius);
     background-image: var(--forum-filler-image);
     background-size: cover;
@@ -497,9 +495,9 @@ html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-c
 
 }
 
-/* Même emplacement réservé aux sous-forums, même quand il est vide.
+/* Même emplacement compact réservé aux sous-forums, même quand il est vide.
    La hauteur peut grandir si le contenu le demande ; aucun texte tronqué. */
 .cjcat .cjcat-footer-empty {
     visibility: hidden;
-    min-height: 40px;
+    min-height: 32px;
 }
