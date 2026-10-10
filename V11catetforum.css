@@ -503,7 +503,7 @@ html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
 }
 
 /* Conserve les images de remplissage et leurs URL clair/sombre du CSS actuel. */
-html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-child(odd))::after {
+/*html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-child(odd))::after {
     content: "";
     display: block;
     min-height: 150px;
@@ -553,7 +553,7 @@ html[data-forum-layout="columns"] .cjcat .cjcat-has-picture .cjcat-metadata {
 
 /* MODE LIGNES : l’image couvre aussi la hauteur du pied de carte.
    Le bandeau des sous-forums commence à droite de l’image. */
-html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-picture {
+/*html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-picture {
     grid-column: 1;
     grid-row: 1 / 3;
 }
@@ -564,7 +564,7 @@ html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-foote
 
 /* SOUS-FORUMS — soulignement depuis le centre.
    Aucun changement de taille ou de position des liens. */
-.cjcat .cjcat-subforums a {
+/*.cjcat .cjcat-subforums a {
     position: relative;
     color: var(--textColor);
     transition: color .2s ease;
@@ -598,6 +598,7 @@ html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-foote
         transition: none;
     }
 }
+
 
 /* IMAGES DE REMPLISSAGE — alternance gauche / droite.
    On compte seulement les catégories dont le nombre de forums est impair.
