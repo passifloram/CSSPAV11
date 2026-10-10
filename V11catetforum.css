@@ -1,0 +1,488 @@
+/* CONCRETE JUNGLE — CATÉGORIES V3
+   SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
+   La palette vient du forum. Toutes les règles sont limitées à .cjcat.
+   Les hauteurs restent automatiques : aucun texte descriptif n’est coupé.
+*/
+/* RÉGLAGES — dimensions facilement modifiables. */
+.cjcat {
+    --cat-image-width: 164px;
+    --cat-lastpost-width: 200px;
+    --cat-gap: 14px;
+    --cat-radius: 12px;
+    --cat-line: color-mix(in srgb, var(--textColor) 18%, transparent);
+    color: var(--textColor);
+    font: 14px/1.55 Arial, sans-serif;
+    margin: 0 0 40px;
+    min-width: 0;
+    clear: both;
+}
+
+.cjcat, .cjcat * {
+    box-sizing: border-box;
+}
+
+.cjcat [hidden] {
+    display: none !important;
+}
+
+.cjcat a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cjcat a:hover {
+    color: var(--one);
+}
+
+.cjcat a:focus-visible, .cjcat button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: -2px;
+}
+
+/* TITRES — une numérotation générée automatiquement. */
+.cjcat .cjcat-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.cjcat .cjcat-number {
+    font: italic 20px Georgia, serif;
+    color: var(--one);
+}
+
+.cjcat .cjcat-title {
+    min-width: 0;
+}
+
+.cjcat .cjcat-title h2 {
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: var(--textColor);
+    font: 700 29px/1.2 Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.cjcat .cjcat-rule {
+    height: 1px;
+    background: var(--cat-line);
+    flex: 1;
+}
+
+.cjcat .cjcat-count {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.cjcat .cjcat-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--cat-gap);
+}
+
+/* LIGNES — image / texte / compteurs / dernier message. */
+.cjcat .forum.cjcat-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--cat-lastpost-width);
+    grid-template-rows: 1fr auto;
+    grid-template-areas: none;
+    position: relative;
+    float: none;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    background: var(--neutral);
+    border: 1px solid var(--cat-line);
+    border-radius: var(--cat-radius);
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.cjcat .cjcat-card.cjcat-has-picture {
+    grid-template-columns: var(--cat-image-width) minmax(0, 1fr) var(--cat-lastpost-width);
+}
+
+.cjcat .cjcat-picture {
+    position: relative;
+    min-height: 170px;
+    overflow: hidden;
+}
+
+.cjcat .cjcat-picture img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    float: none;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    border-radius: 0;
+}
+
+.cjcat .cjcat-editorial {
+    padding:20px;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+}
+
+.cjcat .cjcat-card-heading {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding-bottom:14px;
+}
+
+.cjcat .cjcat-name {
+    font:700 21px/1.2 Georgia,serif;
+    text-transform:uppercase;
+    color:var(--one);
+    overflow-wrap:anywhere;
+    padding-bottom:7px;
+    border-bottom:2px solid var(--one);
+}
+
+.cjcat .cjcat-title-rule {
+    display:none;
+}
+
+.cjcat .cjcat-status {
+    display: block;
+    width: 22px;
+    height: 22px;
+    flex: none;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cjcat .cjcat-description {
+    display: flow-root;
+    font-size: 13px;
+    line-height: 1.55;
+    text-align: justify;
+    overflow-wrap: anywhere;
+}
+
+.cjcat .cjcat-description .forum_desc_text {
+    display: block;
+    height: auto;
+    max-height: none;
+    width: auto;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+
+.cjcat .cjcat-description .forum_desc_text div {
+    margin-right: 0;
+}
+
+.cjcat .cjcat-description > br:last-child {
+    display: none;
+}
+
+.cjcat .cjcat-description img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cjcat .cjcat-description int {
+    color: var(--one);
+    font-weight: bold;
+}
+
+.cjcat .cjcat-counters {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:12px;
+    margin-top:auto;
+    padding:16px 0 0;
+}
+
+.cjcat .cjcat-stat {
+    display:flex;
+    flex-direction:row;
+    align-items:baseline;
+    gap:5px;
+    width:auto;
+    min-height:0;
+    padding:0;
+    background:none;
+    border-radius:0;
+    font-size:10px;
+    line-height:1.4;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.cjcat .cjcat-stat strong {
+    font-size:15px;
+    font-weight:bold;
+    font-variant-numeric:tabular-nums;
+    color:var(--two);
+}
+
+.cjcat .cjcat-stat.cjcat-large-number strong {
+    font-size: 12px;
+}
+
+.cjcat .cjcat-activity {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:none;
+    padding:0 18px;
+    margin:20px 0;
+    border-left:1px solid var(--cat-line);
+    min-width:0;
+}
+
+.cjcat .cjcat-lastrow {
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    align-items:center;
+    width:100%;
+    min-width:0;
+}
+
+.cjcat .cjcat-avatar {
+    flex: none;
+}
+
+.cjcat .cjcat-avatar img {
+    display: block;
+    width: 42px !important;
+    height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cjcat .cjcat-lastpost {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    max-height: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    overflow: visible;
+    text-align: left;
+    font: 11px/1.6 Arial, sans-serif;
+    overflow-wrap: anywhere;
+}
+
+.cjcat .cjcat-lasttitle {
+    display:block;
+    font-size:12px;
+    line-height:1.4;
+    font-weight:bold;
+    padding:0;
+    margin-bottom:7px;
+    border:0;
+    color:var(--one);
+}
+
+.cjcat .cjcat-lastpost img {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* SOUS-FORUMS — le carrousel ne s’active que si les liens débordent. */
+.cjcat .cjcat-footer {
+    grid-column:1 / -1;
+    background:transparent;
+    border-top:1px solid var(--cat-line);
+    min-width:0;
+    min-height:40px;
+    padding:7px 18px;
+}
+
+.cjcat .cjcat-links-label {
+    display: none;
+}
+
+.cjcat .cjcat-subforums {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    font-size: 0;
+}
+
+.cjcat .cjcat-window {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.cjcat .cjcat-track {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cjcat .cjcat-subforums a {
+    display: inline-block;
+    flex: none;
+    margin: 0;
+    padding: 3px 0;
+    border: 0;
+    background: none;
+    color: var(--one);
+    font: bold 11px/1.5 Arial, sans-serif;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.cjcat .cjcat-subforums a:hover {
+    color: var(--one);
+    text-decoration: underline;
+}
+
+.cjcat .cjcat-carousel .cjcat-track {
+    gap: 0;
+    transition: transform .25s ease;
+}
+
+.cjcat .cjcat-carousel .cjcat-track a {
+    flex: 0 0 100%;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    padding: 3px;
+}
+
+.cjcat .cjcat-arrow {
+    display: block;
+    flex: none;
+    width: 24px;
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--one);
+    cursor: pointer;
+    font: 20px/26px Arial, sans-serif;
+}
+
+.cjcat .cjcat-arrow:disabled {
+    opacity: .3;
+    cursor: default;
+}
+
+/* DEUX COLONNES — commande et mémorisation du switch existant. */
+html[data-forum-layout="columns"] .cjcat .cjcat-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-card {
+    grid-template-columns: 100px minmax(0, 1fr);
+    grid-template-rows: 1fr auto auto;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-card:not(.cjcat-has-picture) .cjcat-editorial {
+    grid-column: 1 / -1;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-picture {
+    min-height: 180px;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-editorial {
+    padding: 15px;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-name {
+    font-size:19px;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-title-rule {
+    display: none;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-counters {
+    flex-direction:row;
+    padding:14px 0 0;
+    gap:12px;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-stat {
+    width:auto;
+    min-height:0;
+    font-size:9px;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-stat strong {
+    font-size: 13px;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-stat.cjcat-large-number strong {
+    font-size: 10px;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-activity {
+    grid-column:1 / -1;
+    padding:12px 16px;
+    margin:0;
+    border-left:0;
+    border-top:1px solid var(--cat-line);
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-lastrow {
+    flex-direction: row;
+    min-height: 44px;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-lastpost {
+    text-align: left;
+}
+
+html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+/* Conserve les images de remplissage et leurs URL clair/sombre du CSS actuel. */
+html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-child(odd))::after {
+    content: "";
+    display: block;
+    min-height: 180px;
+    border-radius: var(--cat-radius);
+    background-image: var(--forum-filler-image);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cjcat .cjcat-carousel .cjcat-track {
+        transition: none;
+    }
+
+}
