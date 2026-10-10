@@ -97,7 +97,7 @@
 }
 
 /* LIGNES — image / texte / compteurs / dernier message. */
-.cjcat .forum.cjcat-card {
+/*.cjcat .forum.cjcat-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr) var(--cat-lastpost-width);
     grid-template-rows: 1fr auto;
@@ -322,7 +322,7 @@
 }
 
 /* SOUS-FORUMS — le carrousel ne s’active que si les liens débordent. */
-.cjcat .cjcat-footer {
+/*.cjcat .cjcat-footer {
     grid-column:1 / -1;
     background:transparent;
     border-top:1px solid var(--cat-line);
