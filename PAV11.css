@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
 
 
 /* BASE : dimensions, polices et couleurs héritées du forum */
@@ -2382,4 +2384,17 @@
     #cjpa-v11 .cjpa-rp-links a[href] > span {
         transition: none;
     }
+}
+
+/* Le lien de l’organisation ne s’étire pas dans sa colonne flex. */
+#cjpa-v11 .cjpa-organisation-copy > .cjpa-text-link {
+    align-self: flex-start;
+    width: fit-content;
+    max-width: 100%;
+}
+
+/* Titres des trois onglets : même police que les catégories du forum. */
+#cjpa-v11 .cjpa-tabs button > strong {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
 }
