@@ -1,10 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
-/* CONCRETE JUNGLE — CATÉGORIES V7
-   SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
-   La palette vient du forum. Toutes les règles sont limitées à .cjcat.
-   Les hauteurs restent automatiques : aucun texte descriptif n’est coupé.
-*/
 /* RÉGLAGES — dimensions facilement modifiables. */
 .cjcat {
     --cat-image-width: 164px;
@@ -77,7 +72,7 @@
     padding: 0;
     background: none;
     color: var(--textColor);
-    font: 700 29px/1.2 "Playfair Display", serif;
+    font: 400 29px/1.2 "Abril Fatface", serif;
     text-transform: uppercase;
     letter-spacing: .5px;
 }
@@ -372,7 +367,7 @@
 
 .cjcat .cjcat-subforums a:hover {
     color: var(--one);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .cjcat .cjcat-carousel .cjcat-track {
@@ -561,4 +556,71 @@ html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-pictu
 html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-footer {
     grid-column: 2 / -1;
     grid-row: 2;
+}
+
+/* SOUS-FORUMS — arrêt de métro au survol et au clavier.
+   Décor positionné dans le padding existant : aucune variation de hauteur. */
+.cjcat .cjcat-subforums a {
+    position: relative;
+    color: var(--textColor);
+    transition: color .2s ease;
+}
+.cjcat .cjcat-subforums a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 5px;
+    bottom: 1px;
+    height: 1px;
+    background: var(--one);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .28s ease;
+    pointer-events: none;
+}
+.cjcat .cjcat-subforums a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    border: 1px solid var(--one);
+    border-radius: 50%;
+    background: var(--neutral);
+    opacity: 0;
+    transition: opacity .12s ease;
+    pointer-events: none;
+}
+.cjcat .cjcat-subforums a:is(:hover, :focus-visible) {
+    color: var(--one);
+    text-decoration: none;
+}
+.cjcat .cjcat-subforums a:is(:hover, :focus-visible)::before {
+    transform: scaleX(1);
+}
+.cjcat .cjcat-subforums a:is(:hover, :focus-visible)::after {
+    opacity: 1;
+    transition-delay: .18s;
+}
+@media (prefers-reduced-motion: reduce) {
+    .cjcat .cjcat-subforums a,
+    .cjcat .cjcat-subforums a::before,
+    .cjcat .cjcat-subforums a::after {
+        transition: none;
+    }
+}
+
+/* IMAGES DE REMPLISSAGE — alternance gauche / droite.
+   On compte seulement les catégories dont le nombre de forums est impair.
+   Première image à gauche ; les catégories paires ne décalent pas la série.
+   La grille dense remplit la case libre à gauche du dernier forum. */
+html[data-forum-layout="columns"] .cjcat:nth-child(odd of .cjcat:has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd))) > .cjcat-list {
+    grid-auto-flow: row dense;
+}
+html[data-forum-layout="columns"] .cjcat:nth-child(odd of .cjcat:has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd))) > .cjcat-list > .cjcat-card:last-child {
+    grid-column: 2;
+}
+html[data-forum-layout="columns"] .cjcat:nth-child(odd of .cjcat:has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd))) > .cjcat-list::after {
+    grid-column: 1;
 }
