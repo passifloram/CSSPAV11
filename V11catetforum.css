@@ -1,5 +1,6 @@
-/* 
+/*
    SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
+  
 */
 /* RÉGLAGES — dimensions facilement modifiables. */
 .cjcat {
@@ -278,12 +279,12 @@
 
 .cjcat .cjcat-avatar img {
     display: block;
-    width: 42px !important;
-    height: 42px !important;
-    max-width: 42px !important;
-    max-height: 42px !important;
+    width: 44px !important;
+    height: 64px !important;
+    max-width: 44px !important;
+    max-height: 64px !important;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 5px;
 }
 
 .cjcat .cjcat-lastpost {
@@ -410,8 +411,8 @@ html[data-forum-layout="columns"] .cjcat .cjcat-list {
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-card {
-    grid-template-columns: 100px minmax(0, 1fr);
-    grid-template-rows: 1fr auto auto;
+    grid-template-columns:78px 22px minmax(0,1fr);
+    grid-template-rows:1fr auto auto;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-card:not(.cjcat-has-picture) .cjcat-editorial {
@@ -419,10 +420,14 @@ html[data-forum-layout="columns"] .cjcat .cjcat-card:not(.cjcat-has-picture) .cj
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-picture {
-    min-height: 150px;
+    grid-column:1 / 3;
+    grid-row:1;
+    min-height:150px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-editorial {
+    grid-column:3;
+    grid-row:1;
     padding:12px;
 }
 
@@ -435,19 +440,27 @@ html[data-forum-layout="columns"] .cjcat .cjcat-title-rule {
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-counters {
-    flex-direction:row;
-    padding:9px 0 0;
-    gap:12px;
+    grid-column:1;
+    grid-row:2;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    margin:0;
+    padding:8px 0 8px 12px;
+    gap:5px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-stat {
     width:auto;
     min-height:0;
     font-size:9px;
+    gap:3px;
+    letter-spacing:0;
+    font-weight:bold;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-stat strong {
-    font-size: 13px;
+    font-size:10px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-stat.cjcat-large-number strong {
@@ -455,20 +468,29 @@ html[data-forum-layout="columns"] .cjcat .cjcat-stat.cjcat-large-number strong {
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-activity {
-    grid-column:1 / -1;
-    padding:8px 12px;
+    grid-column:2 / -1;
+    grid-row:2;
+    padding:8px 12px 8px 4px;
     margin:0;
-    border-left:0;
-    border-top:1px solid var(--cat-line);
+    border:0;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-lastrow {
-    flex-direction: row;
-    min-height: 44px;
+    flex-direction:row;
+    align-items:stretch;
+    gap:10px;
+    min-height:76px;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-lastpost {
-    text-align: left;
+    flex:1;
+    text-align:right;
+    background:var(--neutralDark);
+    padding:8px 10px;
+    border-radius:5px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
@@ -500,4 +522,12 @@ html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-c
 .cjcat .cjcat-footer-empty {
     visibility: hidden;
     min-height: 32px;
+}
+
+/* Avatar et métadonnées : même composition que le forum actuel. */
+html[data-forum-layout="columns"] .cjcat .cjcat-avatar img {
+    width:58px!important; height:76px!important; max-width:58px!important; max-height:76px!important; border-radius:5px;
+}
+html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;
 }
