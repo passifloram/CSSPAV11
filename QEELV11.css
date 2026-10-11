@@ -214,3 +214,25 @@ html body .qeel-stats .qeel-stat:nth-child(3):hover::before {
         animation: none;
     }
 }
+
+
+/* Plus de place pour les connectés, sans réduire la police */
+html body .qeel-stats {
+    grid-template-columns: max-content max-content minmax(0, 1fr);
+    column-gap: 18px;
+}
+
+html body .qeel-stats .qeel-stat {
+    padding-inline: 0;
+}
+
+html body .qeel-stats .qeel-stat-online {
+    justify-content: flex-start;
+}
+
+html body .qeel-stats .qeel-stat-online > span,
+html body .qeel-stats .qeel-stat-online s1 {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
