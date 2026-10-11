@@ -101,3 +101,32 @@ html body .qeel-stats .qeel-stat s1 {
 html body .qeel-stats .qeel-stat strong {
     font-size: inherit;
 }
+
+/* Dernier arrivant */
+.qeel #lastuser_avatar img {
+    filter: grayscale(100%) brightness(.55) contrast(1.08);
+    transition: filter .35s ease;
+}
+
+.qeel .qeel-derinsc-bloc {
+    inset: 0;
+    padding: 8px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 18, 30, .42);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 1;
+    transition: opacity .35s ease;
+}
+
+.qeel #last_user:hover #lastuser_avatar,
+.qeel #last_user:hover #lastuser_avatar img {
+    filter: grayscale(0) brightness(1) contrast(1);
+    opacity: 1;
+}
+
+.qeel #last_user:hover .qeel-derinsc-bloc {
+    opacity: 0;
+}
