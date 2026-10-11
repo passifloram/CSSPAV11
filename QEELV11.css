@@ -90,3 +90,14 @@ html body .qeel {
     scrollbar-width: thin;
     scrollbar-color: var(--two) transparent;
 }
+
+/* Statistiques du QEEL : texte plus lisible */
+html body .qeel-stats .qeel-stat > span,
+html body .qeel-stats .qeel-stat s1 {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+html body .qeel-stats .qeel-stat strong {
+    font-size: inherit;
+}
