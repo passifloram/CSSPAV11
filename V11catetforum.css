@@ -708,3 +708,41 @@ html[data-forum-layout="columns"]
     scrollbar-width: thin;
     scrollbar-gutter: stable;
 }
+
+/* COOLER ONLINE — scrollbar discrète */
+html[data-forum-layout="columns"]
+#c5.cjcat .cjcat-description {
+    scrollbar-width: thin;
+    scrollbar-color:
+        color-mix(in srgb, currentColor 25%, transparent)
+        transparent;
+}
+
+html[data-forum-layout="columns"]
+#c5.cjcat .cjcat-description:hover {
+    scrollbar-color: var(--one) transparent;
+}
+
+/* Navigateurs utilisant les pseudo-éléments WebKit */
+@supports not (scrollbar-color: auto) {
+    html[data-forum-layout="columns"]
+    #c5.cjcat .cjcat-description::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    html[data-forum-layout="columns"]
+    #c5.cjcat .cjcat-description::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    html[data-forum-layout="columns"]
+    #c5.cjcat .cjcat-description::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, currentColor 25%, transparent);
+        border-radius: 20px;
+    }
+
+    html[data-forum-layout="columns"]
+    #c5.cjcat .cjcat-description:hover::-webkit-scrollbar-thumb {
+        background: var(--one);
+    }
+}
