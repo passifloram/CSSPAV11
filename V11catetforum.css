@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
 /*
-   SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
+   SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES / COOLER ONLINE 
   
 */
 /* RÉGLAGES — dimensions facilement modifiables. */
@@ -611,4 +611,86 @@ html[data-forum-layout="columns"] .cjcat:nth-child(odd of .cjcat:has(> .cjcat-li
 }
 html[data-forum-layout="columns"] .cjcat:nth-child(odd of .cjcat:has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd))) > .cjcat-list::after {
     grid-column: 1;
+}
+
+
+/* ==================================================
+   COOLER ONLINE — 3 forums en haut, 2 blocs en dessous
+   ================================================== */
+
+html[data-forum-layout="columns"] #c5.cjcat > .cjcat-list {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-flow: row dense;
+}
+
+/* Trois premiers forums : un tiers de la largeur chacun */
+html[data-forum-layout="columns"]
+#c5.cjcat > .cjcat-list > .cjcat-card:nth-child(-n+3) {
+    grid-column: span 2;
+    grid-row: 1;
+    min-width: 0;
+}
+
+/* Image décorative : reprend celle déjà configurée */
+html[data-forum-layout="columns"] #c5.cjcat > .cjcat-list::after {
+    content: "";
+    display: block;
+    grid-row: 2;
+    min-height: 150px;
+    border-radius: var(--cat-radius);
+    background: var(--forum-filler-image) center / cover no-repeat;
+}
+
+html[data-forum-layout="columns"]
+#c5.cjcat > .cjcat-list > .cjcat-card:nth-child(4) {
+    grid-row: 2;
+    min-width: 0;
+}
+
+/* ==================================================
+   ALTERNANCE GÉNÉRALE
+   ================================================== */
+
+html[data-forum-layout="columns"]
+.cjcat:is(#c5, :has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd))) {
+    --image-position: 2;
+    --forum-position: 1;
+    --bloc-largeur: 1;
+}
+
+html[data-forum-layout="columns"]
+.cjcat:nth-child(odd of .cjcat:is(
+    #c5,
+    :has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd))
+)) {
+    --image-position: 1;
+    --forum-position: 2;
+}
+
+/* Cooler online utilise six pistes : trois par bloc inférieur */
+html[data-forum-layout="columns"] #c5.cjcat {
+    --bloc-largeur: 3;
+}
+
+html[data-forum-layout="columns"]
+.cjcat:is(#c5, :has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd)))
+> .cjcat-list {
+    grid-auto-flow: row dense;
+}
+
+html[data-forum-layout="columns"]
+.cjcat:is(#c5, :has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd)))
+> .cjcat-list > .cjcat-card:last-child {
+    grid-column:
+        calc((var(--forum-position) - 1) * var(--bloc-largeur) + 1)
+        / span var(--bloc-largeur);
+}
+
+html[data-forum-layout="columns"]
+.cjcat:is(#c5, :has(> .cjcat-list > .cjcat-card:last-child:nth-child(odd)))
+> .cjcat-list::after {
+    grid-column:
+        calc((var(--image-position) - 1) * var(--bloc-largeur) + 1)
+        / span var(--bloc-largeur);
 }
