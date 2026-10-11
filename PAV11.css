@@ -2542,3 +2542,23 @@
     font-size: 11px;
     line-height: 1.4;
 }
+
+/* CITY STATUS — valeurs alternées, libellés neutres et lisibles. */
+#cjpa-v11 #cjpa-panel-index .cjpa-city {
+    --cj-status-a: var(--cj-one);
+    --cj-status-b: var(--cj-two);
+}
+[data-color-scheme="dark"] #cjpa-v11 #cjpa-panel-index .cjpa-city {
+    --cj-status-a: #a3aaff;
+    --cj-status-b: #e69aa8;
+}
+#cjpa-v11 #cjpa-panel-index .cjpa-city-status-title {
+    color: var(--cj-status-a);
+}
+#cjpa-v11 #cjpa-panel-index #cjpa-tube,
+#cjpa-v11 #cjpa-panel-index #cjpa-sunset {
+    color: var(--cj-status-b);
+}
+#cjpa-v11 #cjpa-panel-index #cjpa-sunrise {
+    color: var(--cj-status-a);
+}
