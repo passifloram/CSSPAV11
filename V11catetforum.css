@@ -694,3 +694,17 @@ html[data-forum-layout="columns"]
         calc((var(--image-position) - 1) * var(--bloc-largeur) + 1)
         / span var(--bloc-largeur);
 }
+
+/* COOLER ONLINE — descriptions de hauteur identique */
+html[data-forum-layout="columns"]
+#c5.cjcat .cjcat-description {
+    height: 120px; /* Modifier ici la hauteur souhaitée */
+    min-height: 120px;
+    max-height: 120px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+}
