@@ -130,3 +130,87 @@ html body .qeel-stats .qeel-stat strong {
 .qeel #last_user:hover .qeel-derinsc-bloc {
     opacity: 0;
 }
+
+
+/* STATISTIQUES — petites enseignes londoniennes */
+html body .qeel-stats .qeel-stat {
+    border: 0;
+    gap: 12px;
+}
+
+/* Icônes Font Awesome déjà chargé sur le forum */
+html body .qeel-stats .qeel-stat::before {
+    display: inline-block;
+    flex: 0 0 26px;
+    width: 26px;
+    height: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--one);
+    opacity: .65;
+    transform: rotate(-8deg);
+    transition: opacity .25s ease;
+}
+
+/* Journal : potins de quartier */
+html body .qeel-stats .qeel-stat:nth-child(1)::before {
+    content: "\f1ea";
+}
+
+/* Clé : Londoners */
+html body .qeel-stats .qeel-stat:nth-child(2)::before {
+    content: "\f084";
+    color: var(--two);
+    transform: rotate(-25deg);
+}
+
+/* Tasse : connectés */
+html body .qeel-stats .qeel-stat:nth-child(3)::before {
+    content: "\f7b6";
+    transform: none;
+}
+
+/* Une animation courte à chaque survol */
+html body .qeel-stats .qeel-stat:hover::before {
+    opacity: 1;
+    animation: cj-qeel-enseigne .6s ease-in-out;
+}
+
+html body .qeel-stats .qeel-stat:nth-child(2):hover::before {
+    animation-name: cj-qeel-cle;
+}
+
+html body .qeel-stats .qeel-stat:nth-child(3):hover::before {
+    animation-name: cj-qeel-tasse;
+}
+
+@keyframes cj-qeel-enseigne {
+    0%, 100% { transform: rotate(-8deg); }
+    40%      { transform: rotate(5deg); }
+    70%      { transform: rotate(-12deg); }
+}
+
+@keyframes cj-qeel-cle {
+    0%, 100% { transform: rotate(-25deg); }
+    40%      { transform: rotate(-8deg); }
+    70%      { transform: rotate(-32deg); }
+}
+
+@keyframes cj-qeel-tasse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html body .qeel-stats .qeel-stat:hover::before {
+        animation: none;
+    }
+}
