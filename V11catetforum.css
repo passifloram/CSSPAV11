@@ -266,7 +266,7 @@
     min-width:0;
 }
 
-.cjcat .cjcat-lastrow {
+/*.cjcat .cjcat-lastrow {
     display:flex;
     flex-direction:row;
     gap:10px;
@@ -355,7 +355,7 @@
     gap: 16px;
 }
 
-.cjcat .cjcat-subforums a {
+/*.cjcat .cjcat-subforums a {
     display: inline-block;
     flex: none;
     margin: 0;
@@ -482,7 +482,7 @@ html[data-forum-layout="columns"] .cjcat .cjcat-lastrow {
     min-height:54px;
 }
 
-html[data-forum-layout="columns"] .cjcat .cjcat-lastpost {
+/* html[data-forum-layout="columns"] .cjcat .cjcat-lastpost {
     flex:1;
     min-width:0;
     width:auto;
@@ -503,7 +503,7 @@ html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
 }
 
 /* Conserve les images de remplissage et leurs URL clair/sombre du CSS actuel. */
-html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-child(odd))::after {
+/* html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-child(odd))::after {
     content: "";
     display: block;
     min-height: 150px;
@@ -528,7 +528,7 @@ html[data-forum-layout="columns"] .cjcat-list:has(> .cjcat-card:last-child:nth-c
 }
 
 /* Avatar et métadonnées : même composition que le forum actuel. */
-html[data-forum-layout="columns"] .cjcat .cjcat-avatar img {
+/* html[data-forum-layout="columns"] .cjcat .cjcat-avatar img {
     width:42px!important;
     height:54px!important;
     max-width:42px!important;
@@ -553,7 +553,7 @@ html[data-forum-layout="columns"] .cjcat .cjcat-has-picture .cjcat-metadata {
 
 /* MODE LIGNES : l’image couvre aussi la hauteur du pied de carte.
    Le bandeau des sous-forums commence à droite de l’image. */
-html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-picture {
+/* html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-picture {
     grid-column: 1;
     grid-row: 1 / 3;
 }
