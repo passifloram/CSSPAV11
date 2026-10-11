@@ -253,3 +253,20 @@ html body .qeel-stats .qeel-stat-online s1 {
 .qeel .qeel-24h vl {
     color: var(--two);
 }
+
+/* Rétablir les titres en couleurs unies */
+html body .qeel .qeel-online vl,
+html body .qeel .qeel-24h vl {
+    background: none !important;
+    background-clip: border-box !important;
+    -webkit-background-clip: border-box !important;
+    -webkit-text-fill-color: currentColor !important;
+}
+
+html body .qeel .qeel-online vl {
+    color: var(--one) !important;
+}
+
+html body .qeel .qeel-24h vl {
+    color: var(--two) !important;
+}
