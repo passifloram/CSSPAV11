@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
-/* 
+/*
    SOMMAIRE : RÉGLAGES / TITRES / LIGNES / SOUS-FORUMS / DEUX COLONNES
-
+  
 */
- RÉGLAGES — dimensions facilement modifiables. */
+/* RÉGLAGES — dimensions facilement modifiables. */
 .cjcat {
     --cat-image-width: 164px;
     --cat-lastpost-width: 200px;
@@ -598,7 +598,6 @@ html:not([data-forum-layout="columns"]) .cjcat .cjcat-has-picture > .cjcat-foote
         transition: none;
     }
 }
-
 
 /* IMAGES DE REMPLISSAGE — alternance gauche / droite.
    On compte seulement les catégories dont le nombre de forums est impair.
