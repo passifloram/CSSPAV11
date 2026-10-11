@@ -236,3 +236,20 @@ html body .qeel-stats .qeel-stat-online s1 {
     overflow: visible;
     text-overflow: clip;
 }
+
+/* Titres du QEEL — couleurs unies, sans dégradé */
+.qeel .qeel-online vl,
+.qeel .qeel-24h vl {
+    background: none;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+}
+
+.qeel .qeel-online vl {
+    color: var(--one);
+}
+
+.qeel .qeel-24h vl {
+    color: var(--two);
+}
