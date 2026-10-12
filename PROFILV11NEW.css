@@ -1,10 +1,12 @@
-/*  profil des messages, habillage autonome
- * @ROOT@ est développé par la préparation du fichier final.
+/* Concrete Jungle — profil des messages, habillage autonome, 12 octobre 2026.
+ * À charger APRÈS les feuilles existantes. Aucun import Amaterasu/Novemberwitch.
+ * Les scripts existants conservent le contenu, le classement et les plugins.
+ * body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) est développé par la préparation du fichier final.
  */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Work+Sans:wght@400;600;700;800&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
 
-@ROOT@ {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) {
   --cjp-paper: var(--neutral, #f8f6f2);
   --cjp-tab: var(--neutralTwo, #eae7e2);
   --cjp-ink: var(--textColor, #29282c);
@@ -17,7 +19,7 @@
 }
 
 /* En-tête. Aucun sélecteur sur le corps des messages ou la grille du sujet. */
-@ROOT@ > .post_head {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .post_head {
   display: flex !important;
   flex-flow: row nowrap;
   align-items: center;
@@ -36,34 +38,34 @@
   text-align: left;
   overflow: visible;
 }
-@ROOT@ > .post_head::before,
-@ROOT@ > .post_head::after { content: none; }
-@ROOT@ > .post_head > .post_name {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .post_head::before,
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .post_head::after { content: none; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .post_head > .post_name {
   display: flex; flex: 1 1 0; flex-direction: column; gap: 6px;
   box-sizing: border-box; width: auto; min-width: 0; max-width: 100%;
   height: auto; margin: 0; padding: 0;
   border: 0; border-radius: 0; background: transparent; box-shadow: none;
 }
-@ROOT@ .post_head .post_name_bloc {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_name_bloc {
   display: block; width: auto; min-width: 0; margin: 0; padding: 0;
   border: 0; background: transparent;
 }
-@ROOT@ .post_head .post_name_bloc > hr,
-@ROOT@ .post_head .post_name_bloc > .dot { display: none !important; }
-@ROOT@ .post_head .post_pseudo {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_name_bloc > hr,
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_name_bloc > .dot { display: none !important; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_pseudo {
   display: block; margin: 0; padding: 0; border: 0; background: none;
   font: 400 32px/1.1 var(--cjp-title-font);
   letter-spacing: 0; text-transform: none;
   overflow-wrap: anywhere;
 }
 /* Conserver les couleurs des groupes et le lien de profil. */
-@ROOT@ .post_head .post_pseudo :is(a, span, strong) {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_pseudo :is(a, span, strong) {
   font-family: inherit; font-size: inherit; font-weight: 400;
   line-height: inherit; letter-spacing: inherit; text-transform: inherit;
   background: none; -webkit-text-fill-color: currentColor;
 }
-@ROOT@ .post_head .post_pseudo a { text-decoration: none; }
-@ROOT@ .post_head .post_quote {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_pseudo a { text-decoration: none; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_quote {
   display: block; box-sizing: border-box; width: auto; min-width: 0;
   height: auto; margin: 0; padding: 0; border: 0; border-radius: 0;
   background: transparent; box-shadow: none;
@@ -71,16 +73,16 @@
   font: 400 14px/1.45 var(--cjp-text-font) !important;
   letter-spacing: 0; text-transform: none; overflow-wrap: anywhere;
 }
-@ROOT@ .post_head .post_quote :is(.user_field, .field_content) {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_quote :is(.user_field, .field_content) {
   display: block; width: auto; height: auto; margin: 0; padding: 0;
   color: inherit; background: transparent; border: 0;
   font: inherit !important; letter-spacing: inherit; text-transform: none;
 }
-@ROOT@ .post_head :is(.post_quote, .post_image) :is(.field_label, .field_separator) {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head :is(.post_quote, .post_image) :is(.field_label, .field_separator) {
   display: none !important;
 }
-@ROOT@ .post_head .post_quote:empty { display: none; }
-@ROOT@ > .post_head > .post_image {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_quote:empty { display: none; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .post_head > .post_image {
   display: flex; flex: 0 0 78px; align-items: center; justify-content: center;
   align-self: stretch; box-sizing: border-box;
   width: 78px; min-width: 78px; max-width: 78px;
@@ -90,5 +92,178 @@
   border-radius: 0 !important; background: transparent;
   box-shadow: none; overflow: visible !important;
 }
-@ROOT@ > .post_head > .post_image:not(:has(img)) { display: none !important; }
-@ROOT@ .post_head .post_image :is(.user_field, .field_content) {
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .post_head > .post_image:not(:has(img)) { display: none !important; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_image :is(.user_field, .field_content) {
+  display: block !important; box-sizing: border-box;
+  width: 62px !important; height: 62px !important;
+  margin: 0 !important; padding: 0 !important; border: 0;
+  background: transparent; font-size: 0; line-height: 0;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_image img {
+  display: block !important; box-sizing: border-box;
+  width: 62px !important; min-width: 62px !important; max-width: 62px !important;
+  height: 62px !important; min-height: 62px !important; max-height: 62px !important;
+  object-fit: cover !important; object-position: center;
+  margin: 0; padding: 0; border: 0; border-radius: 2px;
+  transform: rotate(4deg); box-shadow: none;
+}
+
+/* Coque du profil. Avatar existant : 220 × 352, sans recadrage nouveau. */
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .cj-post-profile {
+  display: block; box-sizing: border-box;
+  width: 240px !important; min-width: 240px !important; max-width: 240px !important;
+  margin: 0; padding: 10px;
+  border: 0; border-radius: 5px; box-shadow: none;
+  background: var(--cjp-paper); color: var(--cjp-ink);
+  font: 400 14px/1.5 var(--cjp-text-font); text-align: left;
+}
+/* Respecte la classe employée par les annonces sans profil. */
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile).cj-post-no-profile > .cj-post-profile { display: none !important; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-profile > .post_avatar {
+  display: block; box-sizing: border-box;
+  width: 220px !important; min-width: 220px !important; max-width: 220px !important;
+  height: auto !important; margin: 0 auto !important; padding: 0;
+  border: 0; background: none; overflow: visible !important;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-profile > .post_avatar img {
+  display: block !important; box-sizing: border-box;
+  width: 220px !important; min-width: 220px !important; max-width: 220px !important;
+  height: 352px !important; min-height: 352px !important; max-height: 352px !important;
+  object-fit: fill !important; margin: 0; padding: 0; border: 0;
+  border-radius: 5px !important;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-profile > center { display: block; margin: 0; padding: 0; text-align: center; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-profile .post_rank { font: 400 14px/1.5 var(--cjp-text-font); }
+
+/* Intercalaires : aucune bordure, aucun changement de largeur au survol. */
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-profile > .cj-post-tabs {
+  display: block; box-sizing: border-box; width: 100%; min-width: 0; max-width: 100%;
+  margin: 10px 0 0; padding: 0; border: 0; background: transparent;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs > .cj-post-tabs__nav {
+  display: grid !important; grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: end; gap: 3px;
+  box-sizing: border-box; width: 100%; height: 43px;
+  margin: 0; padding: 0; border: 0; border-radius: 0;
+  background: transparent; overflow: visible;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab {
+  appearance: none; display: flex; flex: none;
+  align-items: center; justify-content: center;
+  box-sizing: border-box; width: 100%; min-width: 0; max-width: 100%;
+  height: 37px; margin: 0; padding: 0;
+  border: 0 !important; border-radius: 7px 7px 0 0;
+  background: var(--cjp-tab) !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: var(--cjp-ink); box-shadow: none;
+  font: 400 14px/1 var(--cjp-text-font);
+  cursor: pointer; transform: none;
+  transition: background-color .18s ease, color .18s ease;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab:hover { color: var(--cjp-accent); }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab:is(.selected, [aria-selected='true']) {
+  height: 43px; background: var(--cjp-paper) !important;
+  color: var(--cjp-accent); cursor: pointer;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab:focus-visible {
+  outline: 2px solid var(--cjp-accent); outline-offset: -3px;
+}
+/* Corrige le text-fill transparent hérité des anciens onglets.
+ * Ces règles ne ciblent aucune icône de badge ou du reste du forum. */
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab > i,
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab > i::before {
+  display: inline-block !important; visibility: visible !important; opacity: 1 !important;
+  color: inherit !important; -webkit-text-fill-color: currentColor !important;
+  font-family: 'Font Awesome 6 Free' !important; font-weight: 900 !important;
+  font-style: normal !important; font-size: 16px !important; line-height: 1 !important;
+  background: none !important; border: 0; padding: 0; margin: 0;
+  pointer-events: none;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab > i { animation: none; transform-origin: center; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab:is(.selected, [aria-selected='true']) > i {
+  animation: cjpIndependentIcon .32s ease-out;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs > .cj-post-tabs__contents {
+  display: block; box-sizing: border-box;
+  width: 100%; min-width: 0; max-width: 100%;
+  height: 255px; min-height: 255px; max-height: 255px;
+  margin: 0; padding: 10px; border: 0; border-radius: 0 0 5px 5px;
+  background: var(--cjp-paper); color: var(--cjp-ink);
+  font: 400 11px/1.45 var(--cjp-text-font); text-align: left;
+  overflow-x: hidden; overflow-y: auto;
+  scrollbar-width: thin; scrollbar-color: var(--cjp-muted) var(--cjp-paper);
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__contents > .cj-post-tabs__panel {
+  display: block; box-sizing: border-box; width: 100%; min-width: 0; max-width: 100%;
+  height: auto; margin: 0; padding: 0; border: 0; background: transparent;
+  font-family: var(--cjp-text-font); overflow-wrap: anywhere;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__contents > .cj-post-tabs__panel:is([hidden], .hidden) {
+  display: none !important;
+}
+/* Anime seulement les conteneurs directs, jamais les tracés des jauges. */
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel:not([hidden]):not(.hidden) > * {
+  animation: cjpIndependentPanel .24s cubic-bezier(.22,.61,.36,1) backwards;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel:not([hidden]):not(.hidden) > :nth-child(2) { animation-delay: .016s; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel:not([hidden]):not(.hidden) > :nth-child(3) { animation-delay: .032s; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel:not([hidden]):not(.hidden) > :nth-child(n+4) { animation-delay: .048s; }
+
+/* Champs ordinaires : présentation existante, valeurs et ordre inchangés.
+ * Aucune règle universelle sur les descendants des contenus enrichis. */
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > .user_field {
+  box-sizing: border-box; width: 100%; min-width: 0;
+  margin: 0 0 7px; padding: 0; line-height: 1.45; overflow-wrap: anywhere;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > .user_field:last-child { margin-bottom: 0; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > .user_field > .field_label {
+  margin-right: 4px; color: var(--textColorAccent, var(--cjp-second));
+  font: 800 10px/1.45 var(--cjp-text-font); letter-spacing: .5px;
+  text-transform: uppercase;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > .user_field > .field_content {
+  font-family: var(--cjp-text-font); font-size: 11px; line-height: 1.45;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > .user_field > .field_separator { display: none; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > :is(.field-pseudo, .field-pronoms-irl) > .field_label { display: none; }
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > :is(.field-pseudo, .field-pronoms-irl) > .field_content {
+  display: flex; justify-content: center; align-items: center;
+  box-sizing: border-box; margin: 0 0 4px; padding: 2px 6px;
+  border: 0; border-radius: 5px;
+  background: var(--gradient-two, linear-gradient(40deg,var(--cjp-accent),var(--cjp-second)));
+  color: var(--stay-white, #fff); text-align: center; text-transform: uppercase;
+  font: 400 11px/1.45 var(--cjp-title-font); letter-spacing: 2px;
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > .field-pronoms-irl > .field_content {
+  margin-top: 8px; background: var(--neutral, var(--cjp-paper)) !important;
+  color: var(--grey, var(--cjp-muted)) !important; text-transform: lowercase !important;
+  font-family: var(--cjp-text-font);
+}
+body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel > .user_field[hidden] { display: none !important; }
+
+@keyframes cjpIndependentIcon {
+  0%,100% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-3px) scale(1.13); }
+  75% { transform: translateY(1px) scale(.97); }
+}
+@keyframes cjpIndependentPanel {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 540px) {
+  body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .post_head { padding: 12px 14px; gap: 12px; }
+  body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_pseudo { font-size: 28px; }
+  /* L'avatar principal et les mises en page mobiles existantes restent identiques. */
+}
+@media (pointer: coarse) {
+  body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs > .cj-post-tabs__nav { height: 44px; }
+  body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab,
+  body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab:is(.selected,[aria-selected='true']) { height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab { transition: none; }
+  body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab > i,
+  body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__panel:not([hidden]):not(.hidden) > * { animation: none !important; }
+}
