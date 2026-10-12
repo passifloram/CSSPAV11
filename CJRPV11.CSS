@@ -1,5 +1,4 @@
-/*
-   Feuille autonome pour les composants .cjrp ; variables héritées du forum. */
+/* Feuille autonome pour les composants .cjrp ; variables héritées du forum. */
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Gloock&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap");
 
 .cjrp {
@@ -56,20 +55,17 @@
   text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
   text-underline-offset: 3px;
 }
-.cjrp a:focus-visible, .cjrp summary:focus-visible { outline: 2px solid var(--rp-link); outline-offset: 4px; }
+.cjrp a:focus-visible, .cjrp .cjrp-tw-text:focus-visible { outline: 2px solid var(--rp-link); outline-offset: 4px; }
 .cjrp .cjrp-tw {
-  display: block; margin: 0 0 28px; padding: 10px 14px;
-  border: 0; border-left: 2px solid var(--rp-line); border-radius: 0 5px 5px 0;
-  background: var(--rp-tint); color: var(--rp-muted);
+  display: flex; align-items: center; gap: 12px; margin: 0 0 28px; padding: 12px 0;
+  border: 0; border-top: 1px solid var(--rp-line); border-bottom: 1px solid var(--rp-line);
+  background: none; color: var(--rp-muted);
   font: 400 var(--little-size, 12px)/1.7 "Work Sans", sans-serif;
 }
-.cjrp .cjrp-tw summary {
-  display: list-item; margin: 0; padding: 0; background: none;
-  color: var(--rp-ink); font: 500 var(--little-size, 12px)/1.7 "Work Sans", sans-serif;
-  cursor: pointer; list-style: disclosure-closed inside;
-}
-.cjrp .cjrp-tw[open] summary { list-style-type: disclosure-open; }
-.cjrp .cjrp-tw p { margin: 8px 0 0; padding: 0; }
+.cjrp .cjrp-warning { flex: 0 0 auto; font-size: 18px; line-height: 1; }
+.cjrp .cjrp-tw-text { min-width: 0; filter: blur(4px); transition: filter .2s ease; cursor: help; }
+.cjrp .cjrp-tw:hover .cjrp-tw-text, .cjrp .cjrp-tw-text:focus { filter: blur(0); }
+@media (prefers-reduced-motion: reduce) { .cjrp .cjrp-tw-text { transition: none; } }
 .cjrp .cjrp-body { margin: 0; padding: 0; color: var(--rp-ink); font: inherit; text-align: left; }
 .cjrp .cjrp-body p { margin: 0 0 1.25em; padding: 0; font: inherit; color: inherit; }
 .cjrp .cjrp-body p:last-child { margin-bottom: 0; }
@@ -82,8 +78,8 @@
   color: var(--rp-muted); font: 400 var(--little-size, 12px)/1.6 "Work Sans", sans-serif;
 }
 .cjrp .cjrp-quote {
-  margin: 0 0 26px; padding: 0 0 0 17px;
-  border: 0; border-left: 2px solid var(--rp-line); background: none;
+  margin: 0 0 26px; padding: 16px 0;
+  border: 0; border-top: 1px solid var(--rp-line); border-bottom: 1px solid var(--rp-line); background: none;
   color: var(--rp-muted); font: 400 var(--medium-size, 16px)/1.6 "Gloock", serif;
 }
 .cjrp .cjrp-image {
@@ -91,4 +87,70 @@
   margin: 0; padding: 0; border: 0; object-fit: cover;
 }
 
-/* 01 — CARNET : titre à gauche, métadonnées et petit repère vertical. */
+/* CARNET : titre à gauche et métadonnées. */
+.cjrp.cjrp--carnet .cjrp-head { padding-bottom: 20px; }
+.cjrp.cjrp--carnet .cjrp-meta { margin-bottom: 12px; }
+
+/* 02 — PORTRAIT : cartouche asymétrique, une image et un titre Gloock. */
+.cjrp.cjrp--portrait .cjrp-head {
+  display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 24px;
+}
+.cjrp.cjrp--portrait .cjrp-visual { width: 96px; height: 128px; overflow: hidden; border-radius: 3px 22px 3px 3px; }
+.cjrp.cjrp--portrait .cjrp-title { font-family: "Gloock", serif; font-size: clamp(26px, 4vw, 34px); }
+.cjrp.cjrp--portrait .cjrp-label { display: block; margin-bottom: 10px; color: var(--rp-muted); }
+
+/* 03 — VIS-À-VIS : deux portraits latéraux, titre dans la colonne centrale. */
+.cjrp.cjrp--duo .cjrp-head {
+  display: grid; grid-template-columns: 68px minmax(0,1fr) 68px;
+  align-items: start; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid var(--rp-line);
+}
+.cjrp.cjrp--duo .cjrp-visual { width: 68px; height: 94px; border-radius: 4px; overflow: hidden; }
+.cjrp.cjrp--duo .cjrp-visual:last-child { margin-top: 30px; }
+.cjrp.cjrp--duo .cjrp-title { font-size: clamp(25px, 3.7vw, 33px); }
+.cjrp.cjrp--duo .cjrp-label { display: block; margin-bottom: 10px; color: var(--rp-muted); }
+
+/* 04 — PANORAMA : photographie large, légende discrète et titre éditorial. */
+.cjrp.cjrp--panorama { padding-top: 20px; }
+.cjrp.cjrp--panorama .cjrp-visual { height: 174px; margin: 0 0 23px; overflow: hidden; border-radius: 5px; }
+.cjrp.cjrp--panorama .cjrp-meta { margin-bottom: 10px; }
+.cjrp.cjrp--panorama .cjrp-title { max-width: 450px; }
+
+/* 05 — BILLET : texte sans image, filet supérieur, citation et titre léger. */
+.cjrp.cjrp--billet { border-radius: 2px; border-top: 3px solid var(--rp-line); }
+.cjrp.cjrp--billet .cjrp-title { font-family: "Gloock", serif; font-size: clamp(27px, 4vw, 35px); }
+.cjrp.cjrp--billet .cjrp-head { margin-bottom: 22px; }
+.cjrp.cjrp--billet .cjrp-foot { justify-content: flex-end; }
+
+/* MÉDAILLON : icône ronde, composition centrée, texte courant aligné à gauche. */
+.cjrp.cjrp--medallion .cjrp-head { text-align: center; }
+.cjrp.cjrp--medallion .cjrp-visual { width: 86px; height: 86px; margin: 0 auto 22px; border-radius: 50%; overflow: hidden; }
+.cjrp.cjrp--medallion .cjrp-title { text-align: center; font-family: "Gloock", serif; }
+.cjrp.cjrp--medallion .cjrp-meta, .cjrp.cjrp--medallion .cjrp-people { justify-content: center; }
+
+/* ORBITE : deux icônes rondes et une composition asymétrique. */
+.cjrp.cjrp--orbite .cjrp-head { display: flex; align-items: center; gap: 24px; }
+.cjrp.cjrp--orbite .cjrp-orbits { display: flex; flex: 0 0 auto; padding-right: 5px; }
+.cjrp.cjrp--orbite .cjrp-visual { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 5px var(--rp-paper); }
+.cjrp.cjrp--orbite .cjrp-visual + .cjrp-visual { margin-left: -18px; margin-top: 36px; }
+.cjrp.cjrp--orbite .cjrp-heading { flex: 1; min-width: 0; text-align: right; }
+.cjrp.cjrp--orbite .cjrp-title { margin-top: 12px; text-align: right; font-size: clamp(25px, 3.7vw, 34px); }
+.cjrp.cjrp--orbite .cjrp-people { justify-content: flex-end; }
+
+/* HORIZON : bandeau photographique et médaillon posé sur son bord inférieur. */
+.cjrp.cjrp--horizon .cjrp-cover { height: 115px; overflow: hidden; border-radius: 5px; }
+.cjrp.cjrp--horizon .cjrp-visual { position: relative; width: 74px; height: 74px; margin: -37px 20px 18px auto; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 6px var(--rp-paper); }
+.cjrp.cjrp--horizon .cjrp-title { font-family: "Gloock", serif; }
+
+@media (max-width: 480px) {
+  .cjrp { padding: 22px 18px; margin: 16px auto; }
+  .cjrp.cjrp--portrait .cjrp-head { grid-template-columns: 66px minmax(0,1fr); gap: 16px; }
+  .cjrp.cjrp--portrait .cjrp-visual { width: 66px; height: 96px; }
+  .cjrp.cjrp--duo .cjrp-head { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 14px; }
+  .cjrp.cjrp--duo .cjrp-heading { grid-column: 1 / -1; grid-row: 2; }
+  .cjrp.cjrp--duo .cjrp-visual { width: 100%; height: 92px; }
+  .cjrp.cjrp--duo .cjrp-visual:last-child { grid-column: 2; grid-row: 1; margin-top: 0; }
+  .cjrp.cjrp--panorama .cjrp-visual { height: 132px; }
+  .cjrp.cjrp--orbite .cjrp-head { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .cjrp.cjrp--orbite .cjrp-heading, .cjrp.cjrp--orbite .cjrp-title { text-align: left; }
+  .cjrp.cjrp--orbite .cjrp-people { justify-content: flex-start; }
+}
