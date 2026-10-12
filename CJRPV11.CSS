@@ -156,3 +156,8 @@
   .cjrp.cjrp--orbite .cjrp-heading, .cjrp.cjrp--orbite .cjrp-title { text-align: left; }
   .cjrp.cjrp--orbite .cjrp-people { justify-content: flex-start; }
 }
+
+.cjrp,
+.cjrp.cjrp--billet {
+  border: none;
+}
