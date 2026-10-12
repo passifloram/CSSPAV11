@@ -2593,3 +2593,14 @@
     white-space: normal;
     overflow-wrap: anywhere;
 }
+
+[data-color-scheme="dark"] #cjpa-v11 .cjpa-news {
+  background: #414b68;
+  color: #e5e7ee;
+}
+
+[data-color-scheme="dark"] #cjpa-v11 .cjpa-news > strong,
+[data-color-scheme="dark"] #cjpa-v11 .cjpa-news > b,
+[data-color-scheme="dark"] #cjpa-v11 #cjpa-event {
+  color: inherit;
+}
