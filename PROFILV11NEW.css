@@ -1,6 +1,4 @@
-/* Concrete Jungle — profil des messages, habillage autonome, 12 octobre 2026.
- * À charger APRÈS les feuilles existantes. Aucun import Amaterasu/Novemberwitch.
- * Les scripts existants conservent le contenu, le classement et les plugins.
+/* profil des messages, habillage autonome
  * body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) est développé par la préparation du fichier final.
  */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Work+Sans:wght@400;600;700;800&display=swap');
