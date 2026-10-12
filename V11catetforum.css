@@ -855,3 +855,13 @@ html body .sidebar .switch-theme .color-scheme-toggle:focus-visible {
         transition: none;
     }
 }
+
+/* Masquer les anciennes icônes du switch */
+html body .sidebar .switch-theme
+.color-scheme-toggle > .icon.light,
+html body .sidebar .switch-theme
+.color-scheme-toggle > .icon.dark,
+html body .sidebar .switch-theme
+.color-scheme-toggle > .icon > i {
+    display: none !important;
+}
