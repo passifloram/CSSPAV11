@@ -161,3 +161,7 @@
 .cjrp.cjrp--billet {
   border: none;
 }
+
+.cjrp .cjrp-foot {
+  border-top: none;
+}
