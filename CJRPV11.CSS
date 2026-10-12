@@ -1,0 +1,94 @@
+/*
+   Feuille autonome pour les composants .cjrp ; variables héritées du forum. */
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Gloock&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap");
+
+.cjrp {
+  --rp-paper: var(--neutral, #f8f6f2);
+  --rp-inset: var(--neutralDark, #e1ded9);
+  --rp-ink: var(--textColor, #29282c);
+  --rp-accent: var(--one, #b9632c);
+  --rp-secondary: var(--two, #a95784);
+  --rp-muted: color-mix(in srgb, var(--rp-ink) 72%, var(--rp-paper));
+  --rp-line: color-mix(in srgb, var(--rp-ink) 18%, var(--rp-paper));
+  --rp-tint: color-mix(in srgb, var(--rp-accent) 8%, var(--rp-paper));
+  --rp-link: color-mix(in srgb, var(--rp-accent) 55%, var(--rp-ink));
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 660px;
+  min-width: 0;
+  margin: 28px auto;
+  padding: clamp(22px, 5%, 44px);
+  border: 1px solid var(--rp-line);
+  border-radius: var(--radius-medium, 10px);
+  background: var(--rp-paper);
+  color: var(--rp-ink);
+  font: 400 var(--normal-size, 14px)/1.9 "Work Sans", sans-serif;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.cjrp *, .cjrp *::before, .cjrp *::after { box-sizing: border-box; }
+.cjrp .cjrp-head { margin: 0 0 28px; min-width: 0; }
+.cjrp .cjrp-meta {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  gap: 6px 16px; margin: 0 0 18px; color: var(--rp-muted);
+  font: 500 var(--little-size, 12px)/1.5 "Work Sans", sans-serif;
+}
+.cjrp .cjrp-label { letter-spacing: .13em; text-transform: uppercase; font-size: var(--mini-size, 10px); }
+.cjrp .cjrp-title {
+  display: block; margin: 0; padding: 0; border: 0; background: none;
+  color: var(--rp-ink); -webkit-text-fill-color: currentColor;
+  font: 400 clamp(27px, 4vw, 38px)/1.18 "Abril Fatface", serif;
+  letter-spacing: -.025em; text-transform: none; text-align: left;
+}
+.cjrp .cjrp-subtitle {
+  display: block; margin: 12px 0 0; color: var(--rp-muted);
+  font: 400 var(--little-size, 12px)/1.7 "Work Sans", sans-serif;
+}
+.cjrp .cjrp-people {
+  display: flex; flex-wrap: wrap; gap: 6px 14px;
+  margin: 14px 0 0; color: var(--rp-link);
+  font: 600 var(--little-size, 12px)/1.6 "Work Sans", sans-serif;
+}
+.cjrp .cjrp-people a, .cjrp .cjrp-body a, .cjrp .cjrp-foot a {
+  color: var(--rp-link); text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 3px;
+}
+.cjrp a:focus-visible, .cjrp summary:focus-visible { outline: 2px solid var(--rp-link); outline-offset: 4px; }
+.cjrp .cjrp-tw {
+  display: block; margin: 0 0 28px; padding: 10px 14px;
+  border: 0; border-left: 2px solid var(--rp-line); border-radius: 0 5px 5px 0;
+  background: var(--rp-tint); color: var(--rp-muted);
+  font: 400 var(--little-size, 12px)/1.7 "Work Sans", sans-serif;
+}
+.cjrp .cjrp-tw summary {
+  display: list-item; margin: 0; padding: 0; background: none;
+  color: var(--rp-ink); font: 500 var(--little-size, 12px)/1.7 "Work Sans", sans-serif;
+  cursor: pointer; list-style: disclosure-closed inside;
+}
+.cjrp .cjrp-tw[open] summary { list-style-type: disclosure-open; }
+.cjrp .cjrp-tw p { margin: 8px 0 0; padding: 0; }
+.cjrp .cjrp-body { margin: 0; padding: 0; color: var(--rp-ink); font: inherit; text-align: left; }
+.cjrp .cjrp-body p { margin: 0 0 1.25em; padding: 0; font: inherit; color: inherit; }
+.cjrp .cjrp-body p:last-child { margin-bottom: 0; }
+.cjrp .cjrp-body strong, .cjrp .cjrp-body b { font-weight: 600; color: var(--rp-ink); }
+.cjrp .cjrp-body em, .cjrp .cjrp-body i { font-style: italic; color: inherit; }
+.cjrp .cjrp-body .cjrp-dialogue { color: var(--rp-link); font-weight: 500; }
+.cjrp .cjrp-foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px;
+  margin: 28px 0 0; padding: 14px 0 0; border-top: 1px solid var(--rp-line);
+  color: var(--rp-muted); font: 400 var(--little-size, 12px)/1.6 "Work Sans", sans-serif;
+}
+.cjrp .cjrp-quote {
+  margin: 0 0 26px; padding: 0 0 0 17px;
+  border: 0; border-left: 2px solid var(--rp-line); background: none;
+  color: var(--rp-muted); font: 400 var(--medium-size, 16px)/1.6 "Gloock", serif;
+}
+.cjrp .cjrp-image {
+  display: block; width: 100%; max-width: 100%; height: 100%;
+  margin: 0; padding: 0; border: 0; object-fit: cover;
+}
+
+/* 01 — CARNET : titre à gauche, métadonnées et petit repère vertical. */
