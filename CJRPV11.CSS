@@ -165,3 +165,27 @@
 .cjrp .cjrp-foot {
   border-top: none;
 }
+
+
+/* FICHE RP TROIS ICONES */
+.cjrp.cjrp--trio { border: none; }
+.cjrp.cjrp--trio .cjrp-head { text-align: center; }
+.cjrp.cjrp--trio .cjrp-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 3vw, 18px);
+  margin: 0 0 24px;
+}
+.cjrp.cjrp--trio .cjrp-visual {
+  flex: 0 0 auto;
+  width: clamp(58px, 16vw, 80px);
+  height: clamp(58px, 16vw, 80px);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.cjrp.cjrp--trio .cjrp-title { text-align: center; }
+.cjrp.cjrp--trio .cjrp-meta,
+.cjrp.cjrp--trio .cjrp-people { justify-content: center; }
+.cjrp.cjrp--trio .cjrp-foot { border-top: none; }
+
