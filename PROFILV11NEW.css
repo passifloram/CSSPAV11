@@ -361,3 +361,10 @@ html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]):not(.t
   background: color-mix(in srgb, var(--cjp-paper) 68%, var(--cjp-ink)) !important;
   color: var(--cjp-ink);
 }
+/* Mode clair : onglet ouvert et panneau unifiés sur un papier lumineux. */
+html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]):not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs__nav > .cj-post-tabs__tab:is(.selected,[aria-selected="true"]),
+html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]):not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .cj-post-tabs > .cj-post-tabs__contents {
+  background: var(--cjp-paper) !important;
+  background: color-mix(in srgb, var(--cjp-paper) 40%, var(--stay-white, #fff)) !important;
+  color: var(--cjp-ink);
+}
