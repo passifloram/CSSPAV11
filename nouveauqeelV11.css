@@ -37,7 +37,7 @@
 .cj-qeel .cjq-stats strong { color: var(--two, #ae5183); font-size: 16px; }
 .cj-qeel .cjq-total { grid-column: 1 / -1; font-size: 10px; }
 .cj-qeel .cjq-total strong { font-size: inherit; }
-.cj-qeel .cjq-heading { margin: 12px 0 5px; padding: 0; border: 0; color: var(--one, #be6228); font: 700 14px/1.3 var(--font, "Work Sans", sans-serif); text-transform: uppercase; letter-spacing: .4px; }
+.cj-qeel .cjq-heading { margin: 12px 0 5px; padding: 0; border: 0; color: var(--one, #be6228); font: 400 16px/1.3 "Abril Fatface", serif; text-transform: uppercase; letter-spacing: .4px; }
 .cj-qeel .cjq-list { font-size: 14px; line-height: 1.6; max-height: 110px; overflow: auto; overflow-wrap: anywhere; scrollbar-width: thin; }
 .cj-qeel .cjq-list a { text-decoration: none; }
 .cj-qeel .cjq-list a:hover { text-decoration: underline; }
@@ -45,10 +45,10 @@
 .cj-qeel .cjq-list td { padding: 0; background: none; color: inherit; font: inherit; }
 .cj-qeel #last_user { position: relative; width: 100%; height: auto; min-height: 260px; overflow: hidden; border-radius: 0; background: var(--neutralDarker, #666); }
 .cj-qeel #lastuser_avatar { position: absolute !important; inset: 0 !important; display: block !important; width: 100% !important; height: 100% !important; opacity: 1; filter: none; }
-.cj-qeel #lastuser_avatar img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; margin: 0 !important; object-fit: cover !important; object-position: center; filter: grayscale(1); }
-.cj-qeel #last_user:hover #lastuser_avatar img { filter: none; }
-.cj-qeel .cjq-welcome { position: absolute; inset: auto 0 0; padding: 40px 12px 14px; color: #fff; background: linear-gradient(transparent, #000d); text-align: center; overflow-wrap: anywhere; }
-.cj-qeel .cjq-welcome small { display: block; margin-bottom: 5px; font-family: var(--font-title, "Gloock", serif); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.cj-qeel #lastuser_avatar img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; margin: 0 !important; object-fit: cover !important; object-position: center; filter: grayscale(1) brightness(.55) contrast(1.08); transition: filter .35s ease; }
+.cj-qeel #last_user:hover #lastuser_avatar img, .cj-qeel #last_user:focus-within #lastuser_avatar img { filter: grayscale(0) brightness(1) contrast(1); }
+.cj-qeel .cjq-welcome { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 12px; color: #fff; background: transparent; text-shadow: 0 1px 5px #000; text-align: center; overflow-wrap: anywhere; }
+.cj-qeel .cjq-welcome small { display: block; margin-bottom: 5px; font-family: "Abril Fatface", serif; font-weight: 400; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
 .cj-qeel #newest_user a { color: #fff !important; font: 700 14px/1.4 var(--font, "Work Sans", sans-serif); letter-spacing: .3px; text-decoration: none; }
 .cj-qeel a:focus-visible, .cj-qeel [tabindex]:focus-visible { outline: 2px solid var(--one, #be6228); outline-offset: -2px; }
 @media (max-width: 700px) {
@@ -63,7 +63,7 @@
   .cj-qeel .cjq-center { grid-column: 1 / -1; grid-row: 2; }
   .cj-qeel .cjq-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (prefers-reduced-motion: reduce) { .cj-qeel .cjq-group img { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .cj-qeel .cjq-group img, .cj-qeel #lastuser_avatar img { transition: none; } }
 
 /* Icônes d’origine : journal, clé et tasse (Font Awesome du forum). */
 .cj-qeel .cjq-stat { display: flex; align-items: center; gap: 10px; }
@@ -71,3 +71,30 @@
 .cj-qeel .cjq-stat > i { flex: 0 0 24px; width: 24px; text-align: center; font-size: 22px; color: var(--one, #be6228); opacity: .65; transform: rotate(-8deg); }
 .cj-qeel .cjq-stat:nth-child(2) > i { color: var(--two, #ae5183); transform: rotate(-25deg); }
 .cj-qeel .cjq-total > i { font-size: 18px; transform: none; }
+
+/* Animations d’origine adaptées aux nouvelles icônes HTML. */
+.cj-qeel .cjq-stat > i { transition: opacity .25s ease; }
+.cj-qeel .cjq-stat:hover > i {
+  opacity: 1;
+  animation: cjq-miroir-enseigne .6s ease-in-out;
+}
+.cj-qeel .cjq-stat:nth-child(2):hover > i { animation-name: cjq-miroir-cle; }
+.cj-qeel .cjq-stat:nth-child(3):hover > i { animation-name: cjq-miroir-tasse; }
+@keyframes cjq-miroir-enseigne {
+  0%, 100% { transform: rotate(-8deg); }
+  40% { transform: rotate(5deg); }
+  70% { transform: rotate(-12deg); }
+}
+@keyframes cjq-miroir-cle {
+  0%, 100% { transform: rotate(-25deg); }
+  40% { transform: rotate(-8deg); }
+  70% { transform: rotate(-32deg); }
+}
+@keyframes cjq-miroir-tasse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cj-qeel .cjq-stat > i { transition: none; }
+  .cj-qeel .cjq-stat:hover > i { animation: none; }
+}
