@@ -1,4 +1,4 @@
-/* skyline + titre */
+/*skyline  */
 .cjq-banner {
   position: relative;
   isolation: isolate;
@@ -50,7 +50,7 @@
   .cjq-banner .cjq-skyline { width: 280px; height: 92px; }
 }
 
-/* QEEL miroir */
+/*  QEEL miroir */
 .cj-qeel {
   --qeel-side: 164px;
   --qeel-radius: 12px;
