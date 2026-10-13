@@ -1,7 +1,5 @@
-/* Concrete Jungle — profil des messages, habillage autonome, 13 octobre 2026.
- * À charger APRÈS les feuilles existantes. Aucun import Amaterasu/Novemberwitch.
- * Les scripts existants conservent le contenu, le classement et les plugins.
- * Sélecteurs limités aux profils des sujets ordinaires.
+/* profil des messages, habillage autonome
+ Sélecteurs limités aux profils des sujets ordinaires.
  */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Work+Sans:wght@400;600;700;800&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
@@ -289,12 +287,12 @@ body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-firs
 body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) > .post_head > .post_image::after {
   content: 'LONDON\A POSTAGE\A SERVICE · UK';
   white-space: pre; display: flex; align-items: center; justify-content: center;
-  position: absolute; left: 12px; top: 50%; width: 66px; height: 66px;
+  position: absolute; right: 84px; top: 54%; width: 66px; height: 66px;
   box-sizing: border-box; padding: 8px 2px;
   border: 1px solid currentColor; border-radius: 50%;
   color: var(--cjp-second); opacity: .72;
   font: 700 8px/1.7 var(--cjp-text-font); letter-spacing: .6px; text-align: center;
-  transform: translateY(-50%) rotate(-15deg);
+  transform: translateY(-50%) rotate(-15deg); z-index: 2;
   pointer-events: none;
 }
 body:not(.tinder-auto-topic):not([data-tinder-mode="active"]):not(:has(.sms-first, .wrapped-sms, .sms-fond)) .post_row.post:has(> .cj-post-profile) .post_head .post_image :is(.user_field, .field_content) {
