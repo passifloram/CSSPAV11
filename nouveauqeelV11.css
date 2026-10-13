@@ -47,12 +47,20 @@
 }
 .cj-qeel .cjq-center {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto minmax(0, 1fr) auto minmax(0, 1fr);
   min-width: 0;
   min-height: 0;
-  height: 320px;
+  height: 260px;
   padding: 16px;
 }
+/* Placement explicite : les anciennes règles du forum ne doivent pas
+   déplacer les listes avant leurs titres dans la grille. */
+.cj-qeel .cjq-center > .cjq-stats { grid-area: 1 / 1 / 2 / 2; }
+.cj-qeel .cjq-center > .cjq-heading:first-of-type { grid-area: 2 / 1 / 3 / 2; }
+.cj-qeel .cjq-center > #online_users { grid-area: 3 / 1 / 4 / 2; }
+.cj-qeel .cjq-center > .cjq-heading:last-of-type { grid-area: 4 / 1 / 5 / 2; }
+.cj-qeel .cjq-center > #last_connected { grid-area: 5 / 1 / 6 / 2; }
 .cj-qeel .cjq-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 16px; padding-bottom: 12px; border-bottom: 1px solid var(--qeel-line); }
 .cj-qeel .cjq-stats > div { min-width: 0; overflow-wrap: anywhere; }
 .cj-qeel .cjq-stats strong { color: var(--two, #ae5183); font-size: 16px; }
@@ -83,7 +91,7 @@
 .cj-qeel a:focus-visible, .cj-qeel [tabindex]:focus-visible { outline: 2px solid var(--one, #be6228); outline-offset: -2px; }
 @media (max-width: 700px) {
   .cj-qeel { --qeel-side: 100px; }
-  .cj-qeel .cjq-center { height: 360px; padding: 12px; }
+  .cj-qeel .cjq-center { padding: 12px; }
   .cj-qeel .cjq-stats { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 480px) {
