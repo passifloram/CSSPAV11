@@ -2619,3 +2619,11 @@
     white-space: normal;
     overflow-wrap: anywhere;
 }
+
+#cjpa-v11 #cjpa-recent-topics a {
+    color: #784660;
+}
+
+[data-color-scheme="dark"] #cjpa-v11 #cjpa-recent-topics a {
+    color: #e0a6c2;
+}
