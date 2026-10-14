@@ -2,7 +2,6 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Work+Sans:wght@400;500;600;700&display=swap');
-
 .cj-topic {
   --cjt-paper: var(--neutral, #f8f6f2);
   --cjt-surface: var(--neutralTwo, #eae7e2);
@@ -128,3 +127,34 @@ body:is(.tinder-auto-topic, [data-tinder-mode="active"]) .cj-topic, body:has(.ti
 .cj-topic .post_details .rep-button .rep-nb::before, .cj-topic .post_details .rep-button .rep-nb::after { content: none !important; }
 .cj-topic .post_details :is(a,button):focus-visible { outline: 2px solid var(--cjt-accent); outline-offset: 2px; }
 .cj-topic .post_details .profile-icons a:hover, .cj-topic .post_details .rep-button:hover { opacity: .75; }
+
+/* Le cœur conserve sa forme au survol, au focus et après un vote. */
+.cj-topic .post_details .like_button .rep-button::after,
+.cj-topic .post_details .like_button .rep-button:hover::after,
+.cj-topic .post_details .like_button .rep-button:focus::after,
+.cj-topic .post_details .like_button .rep-button:active::after {
+  content: "\f004" !important;
+  display: inline-block !important;
+  position: static !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font: normal 900 14px/1 "CJ Sujet Icons" !important;
+  color: inherit !important;
+  background: none !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  clip-path: none !important;
+  overflow: visible !important;
+}
+
+/* Date sans pastille ni fond, y compris sur la balise time. */
+.cj-topic .post_details .post_date,
+.cj-topic .post_details .post_date time {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
