@@ -916,3 +916,10 @@ html[data-forum-layout="columns"] .cjcat .cjcat-has-picture .cjcat-metadata {
 html[data-forum-layout="columns"] .cjcat .cjcat-lastrow {
     gap: 7px;
 }
+
+/* Rééquilibrer compteurs / dernier message */
+html[data-forum-layout="columns"] .cjcat .cjcat-metadata,
+html[data-forum-layout="columns"] .cjcat .cjcat-has-picture .cjcat-metadata {
+    grid-template-columns: minmax(76px, 1fr) minmax(0, 210px);
+    column-gap: 14px;
+}
