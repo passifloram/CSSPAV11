@@ -858,3 +858,61 @@ html body .sidebar .switch-theme
 .color-scheme-toggle > .icon > i {
     display: none !important;
 }
+
+/* FORUMS : pastilles et derniers messages plus lisibles */
+
+/* Pastilles : 28 px au lieu de 22 */
+.cjcat .cjcat-status {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+}
+
+/* Un peu plus de place en affichage par lignes */
+.cjcat {
+    --cat-lastpost-width: 230px;
+}
+
+.cjcat .cjcat-activity {
+    padding: 0 12px;
+}
+
+/* Date et pseudo : 13 px au lieu de 11 */
+.cjcat .cjcat-lastpost {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    font-size: 13px;
+    line-height: 1.45;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+/* Titre du dernier sujet : 14 px au lieu de 12 */
+.cjcat .cjcat-lasttitle,
+html[data-forum-layout="columns"] .cjcat .cjcat-lasttitle {
+    font-size: 14px;
+    line-height: 1.35;
+    margin-bottom: 3px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: normal;
+    overflow-wrap: break-word;
+    max-height: none;
+}
+
+/* Rapprocher les compteurs et le dernier message.
+   Les compteurs prennent seulement la largeur nécessaire. */
+html[data-forum-layout="columns"] .cjcat .cjcat-metadata,
+html[data-forum-layout="columns"] .cjcat .cjcat-has-picture .cjcat-metadata {
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 8px;
+}
+
+/* Espacement entre l’avatar et le texte */
+.cjcat .cjcat-lastrow,
+html[data-forum-layout="columns"] .cjcat .cjcat-lastrow {
+    gap: 7px;
+}
