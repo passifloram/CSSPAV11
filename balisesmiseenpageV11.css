@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
-/*  BALISES AUTONOMES
-   Conserve les noms historiques */
+/* BALISES AUTONOMES
+   Conserve les noms historiques. */
 :root {
  --cjf-paper:#f8f6f2; --cjf-panel:#eae7e2; --cjf-wash:#e1ded9;
  --cjf-ink:#29282c; --cjf-muted:#666168; --cjf-line:#c9c5c0;
@@ -282,6 +282,9 @@ html .cj-topic .cj-topic__title {
 }
 html :is(r1,r2,r3,r4,r5,r6,rr1,rr2,rr3,rr4,rr5,rr6) {
   font-size: max(17px, 1.15em); letter-spacing: .01em;
+}
+html :is(rr1,rr2,rr3,rr4,rr5,rr6) {
+  font-size: 15px;
 }
 html :is(.fiche-st,.fiche_st,.fiche-simple-titre) {
   display: flex; align-items: center; gap: 16px;
