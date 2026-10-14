@@ -2607,7 +2607,7 @@
 
 
 #cjpa-v11 .cjpa-activity-links .cjpa-text-link {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 /* Nom de l'organisation  */
@@ -2626,4 +2626,8 @@
 
 [data-color-scheme="dark"] #cjpa-v11 #cjpa-recent-topics a {
     color: var(--cj-status-b, #e69aa8);
+}
+
+[data-color-scheme="dark"] #cjpa-v11 #cjpa-recent-topics a:is(:hover, :focus-visible) {
+    color: #aebaff;
 }
