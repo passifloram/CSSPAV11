@@ -1,5 +1,6 @@
-/* BALISES AUTONOMES
-   Conserve les noms historiques. */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+/*  BALISES AUTONOMES
+   Conserve les noms historiques */
 :root {
  --cjf-paper:#f8f6f2; --cjf-panel:#eae7e2; --cjf-wash:#e1ded9;
  --cjf-ink:#29282c; --cjf-muted:#666168; --cjf-line:#c9c5c0;
@@ -267,4 +268,66 @@ html :is(.fiche-fond,.fiche-titre,.fiche-simple-titre,.fiche-st,.fiche_st) :is(t
  -webkit-background-clip:border-box !important;
  background-clip:border-box !important;
  background:none !important;
+}
+
+/* DM Serif Display est importée en tête de la feuille complète. */
+:root { --cjf-serif: 'DM Serif Display', Georgia, serif; }
+html :is(t1,t2,t3,t4,t5,t22,t33,ti,ti1,r1,r2,r3,r4,r5,r6,rr1,rr2,rr3,rr4,rr5,rr6),
+html :is(.fiche-fond,.fiche-titre,.fiche-st,.fiche_st,.fiche-simple-titre) :is(t1,t2,t3,t4,t5,t22,t33),
+html .cj-topic .cj-topic__title {
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-weight: 400 !important;
+  font-synthesis: none;
+  line-height: 1.35;
+}
+html :is(r1,r2,r3,r4,r5,r6,rr1,rr2,rr3,rr4,rr5,rr6) {
+  font-size: max(17px, 1.15em); letter-spacing: .01em;
+}
+html :is(.fiche-st,.fiche_st,.fiche-simple-titre) {
+  display: flex; align-items: center; gap: 16px;
+}
+html :is(.fiche-st,.fiche_st,.fiche-simple-titre) hr {
+  display: none !important;
+}
+html :is(.fiche-st,.fiche_st,.fiche-simple-titre) > :is(i, .fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands, .cp) {
+  margin-left: auto !important; flex: 0 0 auto;
+  background: none !important; box-shadow: none !important; border: 0 !important;
+}
+/* Onglets : aucun fond, y compris sélection, survol et pseudo-éléments. */
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) {
+  overflow: visible !important;
+  background: none !important; box-shadow: none !important;
+}
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) :is(.btn, [role='tab']),
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) :is(.btn, [role='tab']):is(:hover,:focus,:active,[aria-selected='true'],.active,.selected) {
+  background: none !important; background-image: none !important;
+  border: 0 !important; box-shadow: none !important;
+  color: var(--cjf-accent, var(--textColorAccent, #99456e)) !important;
+  animation: none !important; transform: none !important;
+  padding: 5px !important; width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) :is(.btn,[role='tab'])::before,
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) :is(.btn,[role='tab'])::after {
+  background: none !important; box-shadow: none !important;
+}
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) :is(.btn,[role='tab']) > :is(i,span,svg) {
+  background: none !important; box-shadow: none !important;
+  color: inherit !important; display: inline-block;
+  transition: transform .18s ease, color .18s ease;
+}
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) :is(.btn,[role='tab']):is(:hover,:focus-visible) > :is(i,span,svg) {
+  transform: translateY(-2px) scale(1.16);
+  color: var(--cjf-ink, var(--textColor, #29282c)) !important;
+}
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) [aria-selected='true'] > :is(i,span,svg) {
+  color: var(--cjf-second, #99456e) !important;
+}
+html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) :focus-visible {
+  outline: 1px dashed currentColor; outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglets5) :is(.btn,[role='tab']) > :is(i,span,svg) {
+    transition: none; transform: none !important;
+  }
 }
