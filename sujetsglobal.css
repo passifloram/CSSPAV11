@@ -2,6 +2,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Work+Sans:wght@400;500;600;700&display=swap');
+
 .cj-topic {
   --cjt-paper: var(--neutral, #f8f6f2);
   --cjt-surface: var(--neutralTwo, #eae7e2);
@@ -157,4 +158,38 @@ body:is(.tinder-auto-topic, [data-tinder-mode="active"]) .cj-topic, body:has(.ti
   border-radius: 0 !important;
   padding: 0 !important;
 }
-
+/* Survol des actions : icône seule, jamais de remplissage du bouton.
+   Même comportement dans les sujets ordinaires et sans profil. */
+.cj-topic .post_details .post_manage .profile-icons a,
+.cj-topic .post_details .post_manage .like_button .rep-button,
+.cj-topic .post_details .post_manage .profile-icons a:is(:hover, :focus-visible),
+.cj-topic .post_details .post_manage .like_button .rep-button:is(:hover, :focus-visible) {
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+.cj-topic .post_details .post_manage .profile-icons a::before,
+.cj-topic .post_details .post_manage .like_button .rep-button::after {
+  display: inline-block !important;
+  transition: transform .18s ease, color .18s ease !important;
+  transform-origin: center;
+}
+.cj-topic .post_details .post_manage .profile-icons a:is(:hover, :focus-visible)::before,
+.cj-topic .post_details .post_manage .like_button .rep-button:is(:hover, :focus-visible)::after {
+  transform: translateY(-1px) scale(1.16) !important;
+  color: var(--cjt-ink, #29282c) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: transparent !important;
+}
+.cj-topic .post_details .post_manage .like_button .rep-button:is(:hover, :focus-visible)::after {
+  content: '\f004' !important;
+  font-family: 'CJ Sujet Icons' !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cj-topic .post_details .post_manage .profile-icons a::before,
+  .cj-topic .post_details .post_manage .like_button .rep-button::after {
+    transition: none !important;
+    transform: none !important;
+  }
+}
