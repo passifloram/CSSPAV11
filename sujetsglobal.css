@@ -193,3 +193,31 @@ body:is(.tinder-auto-topic, [data-tinder-mode="active"]) .cj-topic, body:has(.ti
     transform: none !important;
   }
 }
+
+/*  fond hérité LI */
+.cj-topic .post_details .post_manage .profile-icons li,
+.cj-topic .post_details .post_manage .profile-icons li:is(:hover, :focus-within),
+.cj-topic .post_details .post_manage .like_button,
+.cj-topic .post_details .post_manage a.fa-mention {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* La mention est un lien textuel : animation du @ lui-même. */
+.cj-topic .post_details .post_manage a.fa-mention {
+  display: inline-block !important;
+  transform-origin: center;
+  transition: transform .18s ease, color .18s ease !important;
+}
+.cj-topic .post_details .post_manage a.fa-mention:is(:hover, :focus-visible) {
+  transform: translateY(-1px) scale(1.16) !important;
+  color: var(--cjt-ink, #29282c) !important;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cj-topic .post_details .post_manage a.fa-mention {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
