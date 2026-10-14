@@ -2621,9 +2621,9 @@
 }
 
 #cjpa-v11 #cjpa-recent-topics a {
-    color: #784660;
+    color: var(--cj-one);
 }
 
 [data-color-scheme="dark"] #cjpa-v11 #cjpa-recent-topics a {
-    color: #e0a6c2;
+    color: var(--cj-status-b, #e69aa8);
 }
