@@ -2604,3 +2604,8 @@
 [data-color-scheme="dark"] #cjpa-v11 #cjpa-event {
   color: inherit;
 }
+
+
+#cjpa-v11 .cjpa-activity-links .cjpa-text-link {
+    font-size: 12px;
+}
