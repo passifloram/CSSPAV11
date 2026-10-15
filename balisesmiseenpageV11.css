@@ -334,3 +334,22 @@ html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglet
     transition: none; transform: none !important;
   }
 }
+
+/* Hiérarchie des titres : réglages communs, dans et hors des fiches. */
+html body t1,
+html body :is(.fiche-fond,.fiche-titre,.fiche-simple-titre,.fiche-st,.fiche_st) t1 {
+  font-size: var(--fiche-taille-titre, clamp(36px, 4.2vw, 48px));
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  color: var(--cjf-accent);
+  -webkit-text-fill-color: currentColor !important;
+}
+
+html body t2,
+html body :is(.fiche-fond,.fiche-titre,.fiche-simple-titre,.fiche-st,.fiche_st) t2 {
+  font-size: var(--fiche-taille-sous-titre, clamp(24px, 2.8vw, 30px));
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--cjf-ink);
+  -webkit-text-fill-color: currentColor !important;
+}
