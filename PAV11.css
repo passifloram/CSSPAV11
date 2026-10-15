@@ -2336,9 +2336,7 @@
   flex-shrink: 0;
 }
 
-/* ONGLETS — rapproche les titres de leur sous-titre.
-   Le titre sur une ligne s’aligne en bas de sa rangée, comme la dernière
-   ligne des deux autres titres. Le numéro et la flèche restent en place. */
+/* ONGLETS  */
 #cjpa-v11 .cjpa-tabs button > strong {
     align-self: end;
     margin-bottom: 0;
@@ -2349,9 +2347,7 @@
     margin-top: 0;
 }
 
-/* LIENS DE LA PA — soulignement depuis le centre.
-   Organisation, tous les sujets actifs et recherche RP.
-   Les emplacements désactivés restent sans effet jusqu’à ajout d’un lien. */
+/* LIENS DE LA PA  */
 #cjpa-v11 .cjpa-text-link[href],
 #cjpa-v11 .cjpa-rp-links a[href]:not([aria-disabled="true"]) > span {
     text-decoration: none;
@@ -2403,9 +2399,7 @@
     font-weight: 400;
 }
 
-/* PA — ICONES D’ONGLETS, CRÉDITS ET RACCOURCIS (11 octobre).
-   Font Awesome 6.5 est déjà chargé par le forum.
-   Le disque extérieur garde l’animation de remplissage existante. */
+/* PA  */
 #cjpa-v11 .cjpa-tabs .cjpa-tab-icon {
     font-size: 15px;
     font-style: normal;
@@ -2515,7 +2509,7 @@
     #cjpa-v11 #cjpa-panel-index .cjpa-quick .cjpa-quick-label { transition: none; }
 }
 
-/* PAGE 1 — version à gauche, crédits sous le staff à droite. */
+/* crédits sous le staff à droite. */
 #cjpa-v11 #cjpa-panel-forum .cjpa-intro .cjpa-annonces {
     margin-top: 10px;
     padding-top: 2px;
@@ -2550,7 +2544,7 @@
     line-height: 1.4;
 }
 
-/* CITY STATUS — valeurs alternées, libellés neutres et lisibles. */
+/* CITY STATUS*/
 #cjpa-v11 #cjpa-panel-index .cjpa-city {
     --cj-status-a: var(--cj-one);
     --cj-status-b: var(--cj-two);
@@ -2570,9 +2564,6 @@
     color: var(--cj-status-a);
 }
 
-
-
-/* Version : date à gauche et retours à la ligne alignés sous le texte */
 #cjpa-v11 #cjpa-panel-forum .cjpa-intro .cjpa-rank-container {
     display: grid;
     grid-template-columns: max-content minmax(0, 1fr);
