@@ -2,7 +2,7 @@
 /* FICHES DE PRÉSENTATION — feuille indépendante.
    Ancien conteneur : .prez (compatibilité, ne plus employer dans les nouveaux modèles).
    Nouveau conteneur : .fiche-presentation (sans accent).
-   Les deux classes partagent chaque règle
+   Les deux classes partagent chaque règle ; aucune modification du fichier novemberwitch.
    Classes internes conservées : fiche-fond, fiche-titre, fiche-st, fiche-infos, etc.
 */
 
@@ -494,8 +494,12 @@ html body :is(.prez, .fiche-presentation) :is(.fiche-st, .fiche_st, .fiche-secti
 
 /* Fond clair des fiches : distinct du fond de page, anciennes et nouvelles classes.
    Variable dédiée pour éviter les alias historiques presque blancs. */
-html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]) :is(.fiche-fond, .fiche-contenu):not([data-color-scheme="dark"] *) {
+html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]) :is(.fiche-fond, .fiche-contenu):not([data-color-scheme="dark"] *),
+html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]) .main_forum #page-header :is(.fiche-fond, .fiche-contenu):not([data-color-scheme="dark"] *) {
   background: var(--fond-fiche-clair, #e7e2dc) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border: 0 !important;
   box-shadow: none !important;
 }
+
