@@ -392,3 +392,20 @@ html body :is(t2, .fiche-titre-section)::first-letter {
   color: var(--cjf-second);
   -webkit-text-fill-color: currentColor !important;
 }
+
+/* Beat-Fade automatique des icônes de titres, sans classe HTML supplémentaire.
+   Effet Font Awesome : https://docs.fontawesome.com/web/style/animate#beat-fade */
+html body :is(.fiche-st, .fiche_st, .fiche-section) > :is(.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands, .svg-inline--fa) {
+  display: inline-block;
+  transform-origin: center;
+  animation: cj-titre-beat-fade var(--fa-animation-duration, 1s) var(--fa-animation-timing, cubic-bezier(.4, 0, .6, 1)) infinite;
+}
+@keyframes cj-titre-beat-fade {
+  0%, 100% { opacity: var(--fa-beat-fade-opacity, .4); transform: scale(1); }
+  50% { opacity: 1; transform: scale(var(--fa-beat-fade-scale, 1.125)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body :is(.fiche-st, .fiche_st, .fiche-section) > :is(.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands, .svg-inline--fa) {
+    animation: none;
+  }
+}
