@@ -363,23 +363,32 @@ html body :is(.fiche-fond,.fiche-contenu,.fiche-titre,.fiche-simple-titre,.fiche
   flex: 0 1 auto;
   min-width: 0;
   margin: 0;
-  padding: .55em .85em;
+  padding: .1em 0;
   width: fit-content;
   max-width: 100%;
   box-sizing: border-box;
   border: 0;
-  border-radius: 4px;
-  font-family: var(--cjf-sans, 'Work Sans', Arial, sans-serif) !important;
-  font-size: var(--fiche-taille-sous-titre, clamp(16px, 1.8vw, 19px));
-  font-weight: 700 !important;
-  font-synthesis: weight;
+  border-radius: 0;
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-size: var(--fiche-taille-sous-titre, clamp(24px, 2.8vw, 30px));
+  font-weight: 400 !important;
+  font-synthesis: none;
   font-style: normal;
-  line-height: 1.45;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  line-height: 1.25;
+  letter-spacing: .045em;
+  text-transform: none;
   color: var(--cjf-ink);
-  background: color-mix(in srgb, var(--cjf-second) 14%, transparent) !important;
+  background: none !important;
+  box-shadow: none;
   -webkit-text-fill-color: currentColor !important;
   overflow-wrap: anywhere;
 }
 
+
+/* Initiale éditoriale : automatique, sans modifier le HTML. */
+html body :is(t2, .fiche-titre-section)::first-letter {
+  font-size: 1.65em;
+  font-weight: 400;
+  color: var(--cjf-second);
+  -webkit-text-fill-color: currentColor !important;
+}
