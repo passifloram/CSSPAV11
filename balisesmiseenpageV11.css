@@ -6,7 +6,7 @@
  --cjf-ink:#29282c; --cjf-muted:#666168; --cjf-line:#c9c5c0;
  --cjf-accent:#96461f; --cjf-second:#99456e; --cjf-third:#b52235;
  --cjf-inverse:#fffdfa; --cjf-solid:#302b30;
- --cjf-serif:'Gloock',Georgia,serif; --cjf-sans:'Work Sans',Arial,sans-serif;
+ --cjf-serif:'DM Serif Display',Georgia,serif; --cjf-sans:'Work Sans',Arial,sans-serif;
  --cjf-shadow:0 8px 24px #29282c0a;
 }
 [data-color-scheme="dark"] {
@@ -335,21 +335,51 @@ html :is(.tabs-onglets,.tabs-onglets2,.tabs-onglets3,.tabs-onglets4,.tabs-onglet
   }
 }
 
-/* Hiérarchie des titres : réglages communs, dans et hors des fiches. */
-html body t1,
-html body :is(.fiche-fond,.fiche-titre,.fiche-simple-titre,.fiche-st,.fiche_st) t1 {
-  font-size: var(--fiche-taille-titre, clamp(36px, 4.2vw, 48px));
-  line-height: 1.12;
-  letter-spacing: -.025em;
+/* TITRES — source commune aux anciennes balises et aux nouvelles classes.
+   Les fiches ne redéfinissent pas leur typographie. */
+html body :is(t1, .fiche-titre-principal),
+html body :is(.fiche-fond,.fiche-contenu,.fiche-titre,.fiche-simple-titre,.fiche-entete,.fiche-st,.fiche_st,.fiche-section) :is(t1,.fiche-titre-principal) {
+  display: block;
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: .12em 0 .2em;
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-size: var(--fiche-taille-titre, clamp(38px, 5vw, 58px));
+  font-weight: 400 !important;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  text-transform: none;
   color: var(--cjf-accent);
+  background: none !important;
   -webkit-text-fill-color: currentColor !important;
+  overflow-wrap: anywhere;
+}
+html body :is(t2, .fiche-titre-section),
+html body :is(.fiche-fond,.fiche-contenu,.fiche-titre,.fiche-simple-titre,.fiche-entete,.fiche-st,.fiche_st,.fiche-section) :is(t2,.fiche-titre-section) {
+  display: inline-block;
+  position: relative;
+  flex: 0 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: .55em .85em;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 4px;
+  font-family: var(--cjf-sans, 'Work Sans', Arial, sans-serif) !important;
+  font-size: var(--fiche-taille-sous-titre, clamp(16px, 1.8vw, 19px));
+  font-weight: 700 !important;
+  font-synthesis: weight;
+  font-style: normal;
+  line-height: 1.45;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cjf-ink);
+  background: color-mix(in srgb, var(--cjf-second) 14%, transparent) !important;
+  -webkit-text-fill-color: currentColor !important;
+  overflow-wrap: anywhere;
 }
 
-html body t2,
-html body :is(.fiche-fond,.fiche-titre,.fiche-simple-titre,.fiche-st,.fiche_st) t2 {
-  font-size: var(--fiche-taille-sous-titre, clamp(24px, 2.8vw, 30px));
-  line-height: 1.25;
-  letter-spacing: 0;
-  color: var(--cjf-ink);
-  -webkit-text-fill-color: currentColor !important;
-}
