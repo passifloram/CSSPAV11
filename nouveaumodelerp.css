@@ -1,5 +1,5 @@
-/* FICHES RP nouveaux modèles et compatibilité temp4/temp5.
-   Modèles historiques par Amaterasu et adaptation pour CJ
+/* FICHES RP — nouveaux modèles et compatibilité temp4/temp5.
+   Modèles historiques par Amaterasu ; adaptation pour CJ
 */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap");
 
@@ -36,11 +36,13 @@ html body :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .nobg_corps, .rp-contenu) 
 }
 
 html body :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .rp-avec-fond) {
-  background: var(--rp-fond, var(--neutral, #f8f6f2));
+  background: var(--rp-fond, var(--fond-secondaire, var(--neutralTwo, #eae7e2)));
 }
 
-[data-color-scheme="dark"] :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .rp-avec-fond) {
-  background: var(--rp-fond, var(--neutral, #24262c));
+html[data-color-scheme="dark"] body :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .rp-avec-fond),
+html body[data-color-scheme="dark"] :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .rp-avec-fond),
+html body [data-color-scheme="dark"] :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .rp-avec-fond) {
+  background: var(--rp-fond, var(--fond-secondaire, var(--neutralTwo, #24262c)));
 }
 
 html body :is(temp4, temp5, .fiche-rp) :is(.nobg_corps, .rp-sans-fond) {
@@ -232,3 +234,16 @@ html body :is(temp4, temp5, .fiche-rp) :is(.temp_cappuccicon,.rp-embleme) :is(i,
   -webkit-text-fill-color: currentColor !important;
 }
 
+/* Variante facultative : texte sans lettrine. Compatible avec les anciens noms. */
+html body :is(temp4, temp5, .fiche-rp).rp-sans-lettrine :is(.rp_txt, .rp-texte)::first-letter {
+  float: none;
+  margin: 0;
+  padding: 0;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
