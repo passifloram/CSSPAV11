@@ -3,6 +3,7 @@
    Ancien conteneur : .prez (compatibilité, ne plus employer dans les nouveaux modèles).
    Nouveau conteneur : .fiche-presentation (sans accent).
    Les deux classes partagent chaque règle
+   Classes internes conservées : fiche-fond, fiche-titre, fiche-st, fiche-infos, etc.
 */
 
 /*------ PRESENTATIONS ---------*/
@@ -446,7 +447,7 @@ html body :is(.prez, .fiche-presentation) :is(.fiche-fond, .fiche-contenu) {
   max-width: 100%;
   margin: 0;
   padding: var(--fiche-padding-contenu, clamp(20px, 3vw, 32px));
-  background: var(--fond-contenu-fiche, var(--transparent-four, var(--cjf-panel, #eae7e2)));
+  background: var(--fond-contenu-fiche, var(--fond-secondaire, var(--neutralTwo, var(--cjf-panel, #eae7e2))));
   color: var(--cjf-ink, var(--textColor, #29282c));
   border: 0 !important;
   box-shadow: none !important;
@@ -465,6 +466,13 @@ html body :is(.prez, .fiche-presentation) :is(.fiche-st, .fiche_st, .fiche-secti
   background: none;
   border: 0;
 }
+/* En sombre, conserver le panneau profond historique. */
+html[data-color-scheme="dark"] body :is(.prez, .fiche-presentation) :is(.fiche-fond, .fiche-contenu),
+html body[data-color-scheme="dark"] :is(.prez, .fiche-presentation) :is(.fiche-fond, .fiche-contenu),
+html body [data-color-scheme="dark"] :is(.prez, .fiche-presentation) :is(.fiche-fond, .fiche-contenu) {
+  background: var(--fond-contenu-fiche, var(--transparent-four, var(--cjf-panel, #24262c)));
+}
+
 html body :is(.prez, .fiche-presentation) :is(.fiche-st, .fiche_st, .fiche-section):first-child {
   margin-top: 0;
 }
