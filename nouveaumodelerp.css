@@ -1,0 +1,234 @@
+/* FICHES RP nouveaux modèles et compatibilité temp4/temp5.
+   Modèles historiques par Amaterasu et adaptation pour CJ
+*/
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+html body :is(temp4, temp5, .fiche-rp) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--rp-largeur, 680px);
+  margin: 24px auto;
+  color: var(--texte-principal, var(--textColor, #29282c));
+  font-family: var(--police-texte, "Work Sans", Arial, sans-serif);
+  font-size: var(--rp-taille-texte, 15px);
+  line-height: var(--rp-interligne, 1.85);
+  overflow-wrap: anywhere;
+}
+
+[data-color-scheme="dark"] :is(temp4, temp5, .fiche-rp) {
+  color: var(--texte-principal, var(--textColor, #d7d6d2));
+}
+
+html body :is(temp4, temp5, .fiche-rp) * {
+  box-sizing: border-box;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .nobg_corps, .rp-contenu) {
+  width: 100% !important;
+  max-width: 100%;
+  margin: 0;
+  padding: var(--rp-padding, clamp(20px, 4vw, 40px)) !important;
+  border: 0;
+  border-radius: var(--rp-arrondi, 10px);
+  box-shadow: none;
+  font-size: inherit;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .rp-avec-fond) {
+  background: var(--rp-fond, var(--neutral, #f8f6f2));
+}
+
+[data-color-scheme="dark"] :is(temp4, temp5, .fiche-rp) :is(.bg_corps, .rp-avec-fond) {
+  background: var(--rp-fond, var(--neutral, #24262c));
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.nobg_corps, .rp-sans-fond) {
+  background: none;
+}
+
+html body .fiche-rp {
+  --cj1: var(--one, #96461f);
+  --cj2: var(--two, #99456e);
+  --cj3: var(--one, #96461f);
+  --cj4: var(--two, #99456e);
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_baz_img, .rp-image) {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_baz_img, .rp-image) img {
+  display: block;
+  width: var(--rp-taille-image, 88px);
+  height: var(--rp-taille-image, 88px);
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: none;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_carres_img, .rp-images) {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_carres_img, .rp-images) img {
+  width: 68px;
+  height: 68px;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: none;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp4_titre, .temp5_titre, .rp-titre) {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--police-titres, "DM Serif Display", Georgia, serif) !important;
+  font-size: var(--rp-taille-titre, clamp(30px, 4vw, 42px)) !important;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  text-align: center;
+  text-transform: none;
+  background: none !important;
+  color: var(--rp-couleur, var(--cj1, var(--one, #96461f)));
+  -webkit-text-fill-color: currentColor !important;
+  -webkit-background-clip: border-box !important;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.sbt, .rp-partenaires) {
+  display: block;
+  width: 100%;
+  margin: 12px 0 22px;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: 600 12px/1.7 var(--police-texte, "Work Sans", Arial, sans-serif);
+  letter-spacing: .04em;
+  text-align: center;
+  text-transform: none;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_baz_cw, .rp-avertissements) {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  margin: 22px 0;
+  padding: 12px 0;
+  font: 400 12px/1.6 var(--police-texte, "Work Sans", Arial, sans-serif);
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_baz_cw, .rp-avertissements) > :is(i, span.cp) {
+  flex: 0 0 auto;
+  padding: 0;
+  background: none !important;
+  color: var(--rp-couleur-secondaire, var(--cj2, var(--two, #99456e)));
+  -webkit-text-fill-color: currentColor !important;
+  font-size: 16px;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.rp_txt, .rp-texte) {
+  display: flow-root;
+  margin: 24px 0;
+  padding: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: left;
+  white-space: normal;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.rp_txt, .rp-texte)::first-letter {
+  float: left;
+  margin: .08em .16em 0 0;
+  font-family: var(--police-titres, "DM Serif Display", Georgia, serif) !important;
+  font-size: var(--rp-lettrine, 3.5em) !important;
+  line-height: .85;
+  font-weight: 400;
+  color: var(--rp-couleur, var(--cj1, var(--one, #96461f))) !important;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.rp_txt, .rp-texte) p {
+  margin: 0 0 1.2em;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.date, .rp-date) {
+  margin: 24px 0 0;
+  text-align: right;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(bc, .rp-date-texte) {
+  font: 600 12px/1.6 var(--police-texte, "Work Sans", Arial, sans-serif);
+  letter-spacing: .05em;
+  background: none !important;
+  color: var(--rp-couleur, var(--cj1, var(--one, #96461f)));
+  -webkit-text-fill-color: currentColor !important;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.creds, .rp-credits) {
+  margin: 20px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: 400 10px/1.7 var(--police-texte, "Work Sans", Arial, sans-serif);
+  letter-spacing: .04em;
+  text-align: center;
+  text-transform: none;
+  opacity: .8;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.bg_corps,.nobg_corps,.rp-contenu) a {
+  color: var(--rp-couleur, var(--cj1, var(--one, #96461f))) !important;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+html body :is(temp5, .fiche-rp--alternative) :is(.temp5_titre,.rp-titre,bc,.rp-date-texte) {
+  color: var(--rp-couleur, var(--cj3, var(--one, #96461f))) !important;
+}
+
+html body :is(temp5, .fiche-rp--alternative) :is(.rp_txt,.rp-texte)::first-letter {
+  color: var(--rp-couleur, var(--cj3, var(--one, #96461f))) !important;
+}
+
+html body :is(temp5, .fiche-rp--alternative) :is(.bg_corps,.nobg_corps,.rp-contenu) a {
+  color: var(--rp-couleur, var(--cj3, var(--one, #96461f))) !important;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp4_quote,.rp-citation) {
+  width: 100%;
+  margin: 14px auto;
+  font: italic 14px/1.6 var(--police-texte, "Work Sans", Arial, sans-serif);
+  text-align: center;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_cappuccicon,.rp-embleme) {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px !important;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_cappuccicon,.rp-embleme) :is(i,span.cp) {
+  font-size: 26px;
+  background: none !important;
+  color: var(--rp-couleur-secondaire,var(--cj2,var(--two,#99456e)));
+  -webkit-text-fill-color: currentColor !important;
+}
+
