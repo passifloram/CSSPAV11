@@ -1,5 +1,5 @@
-/* FICHES RP — nouveaux modèles et compatibilité temp4/temp5.
-   Modèles historiques par Amaterasu ; adaptation pour CJ
+/* FICHES RP, nouveaux modèles et compatibilité temp4/temp5.
+   Modèles historiques par Amaterasu et adaptation CJ.
 */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap");
 
@@ -132,6 +132,16 @@ html body :is(temp4, temp5, .fiche-rp) :is(.temp_baz_cw, .rp-avertissements) {
   letter-spacing: 0;
   text-align: left;
   text-transform: none;
+}
+
+/* Avertissements masqués au repos, révélés au survol du bloc. */
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_baz_cw, .rp-avertissements) > :not(i, span.cp) {
+  filter: blur(var(--rp-flou-avertissements, 4px)) !important;
+  transition: filter .2s ease;
+}
+
+html body :is(temp4, temp5, .fiche-rp) :is(.temp_baz_cw, .rp-avertissements):is(:hover, :focus-within) > :not(i, span.cp) {
+  filter: none !important;
 }
 
 html body :is(temp4, temp5, .fiche-rp) :is(.temp_baz_cw, .rp-avertissements) > :is(i, span.cp) {
