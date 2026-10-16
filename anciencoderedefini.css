@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
-/* FICHES DE PRÉSENTATION 
+/* FICHES DE PRÉSENTATION — feuille indépendante.
    Ancien conteneur : .prez (compatibilité, ne plus employer dans les nouveaux modèles).
    Nouveau conteneur : .fiche-presentation (sans accent).
    Les deux classes partagent chaque règle
@@ -490,4 +490,12 @@ html body :is(.prez, .fiche-presentation) :is(.fiche-st, .fiche_st, .fiche-secti
   box-shadow: none;
   color: var(--cjf-second, var(--two));
   font-size: 18px;
+}
+
+/* Fond clair des fiches : distinct du fond de page, anciennes et nouvelles classes.
+   Variable dédiée pour éviter les alias historiques presque blancs. */
+html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]) :is(.fiche-fond, .fiche-contenu):not([data-color-scheme="dark"] *) {
+  background: var(--fond-fiche-clair, #e7e2dc) !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
