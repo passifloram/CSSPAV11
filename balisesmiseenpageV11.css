@@ -197,8 +197,8 @@ html :is(.fiche-st,.fiche_st,.fiche-simple-titre) :is(t1,t2,t3,vl) {flex:0 1 aut
 html :is(.fiche-st,.fiche_st,.fiche-simple-titre) hr {flex:1 1 20px;min-width:12px;height:0;margin:0;border:0;border-top:1px solid var(--cjf-line);background:none;}
 html :is(.fiche-st,.fiche_st,.fiche-simple-titre,.fiche-bloc) :is(.fa,.fas,.far,.fab,.fa-solid,.fa-regular,.fa-brands,.cp) {display:inline-block;flex:0 0 auto;width:auto;min-width:0;background:none;border:0;padding:0;color:var(--cjf-second);font-size:16px;line-height:1;}
 html .fiche-titre {display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;}
-html .fiche-titre img {width:120px;height:140px;border-radius:6px;object-fit:cover;}
-html .fiche-titre div {grid-column:auto;padding:16px;background:var(--cjf-panel);}
+html .fiche-titre img {width:120px;height:120px;aspect-ratio:1;border-radius:6px;object-fit:cover;}
+html .fiche-titre div {grid-column:auto;padding:16px;background:var(--cjf-panel);box-sizing:border-box;min-height:120px;align-self:stretch;display:flex;align-items:center;justify-content:center;}
 html :is(.fiche-titre,.fiche-fond,.fiche-simple-titre) t1 {font:400 clamp(26px,4vw,38px)/1.25 var(--cjf-serif);letter-spacing:0;text-transform:none;color:var(--cjf-accent);background:none !important;}
 html .fiche-infos-grid {grid-template-columns:minmax(0,1fr) minmax(100px,32%);height:auto;gap:18px;}
 html .fiche-infos {grid-column:1;grid-row:1;margin:0;height:auto;max-height:none;overflow:visible;}
@@ -238,7 +238,7 @@ html .texte {margin:12px 0;max-width:100%;line-height:1.8;text-align:left;}
  html :is(.fiche-infos-grid,.histoire,.fiche-titre,.ship-grid) {grid-template-columns:minmax(0,1fr);}
  html :is(.fiche-avatar,.fiche-infos) {grid-column:auto;grid-row:auto;}
  html .fiche-avatar {max-width:220px;justify-self:center;}
- html .fiche-titre img {width:100%;height:150px;}
+ html .fiche-titre img {width:120px;height:120px;justify-self:center;}
  html .fiche-img-haute img {aspect-ratio:3/1;max-height:180px;}
  html :is(.annexe-bloc,.infos-bloc,.annexe-bloc:nth-child(2n)) {flex-direction:column;}
  html :is(.annexe-bloc,.infos-bloc) img {width:100% !important;max-width:100%;height:150px;}
