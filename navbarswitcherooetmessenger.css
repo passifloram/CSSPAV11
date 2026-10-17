@@ -1,0 +1,2061 @@
+
+/* ==========================================================
+   SOMMAIRE — MOTS-CLÉS POUR CTRL + F
+   
+   NAVIGATION ET NOTIFICATIONS
+   - NAVBAR SUPÉRIEURE
+   - TOOLBAR ET NOTIFICATIONS
+   
+   SIDEBAR ET COMPTES
+   - SIDEBAR DROITE
+   - BOUTON DE THÈME
+   - SWITCHEROO : CONTRÔLES PRINCIPAUX
+   - SWITCHEROO : PANNEAU AVATAR + NOM
+   - SWITCHEROO : FENÊTRE DE CONNEXION
+   - MODE SOMBRE DE LA SIDEBAR ET DU SWITCHEROO
+   
+   FORUMACTIF MESSENGER
+   - FORUMACTIF MESSENGER
+   - MESSENGER MODE SOMBRE
+   - MESSENGER OUVERTURE ET FERMETURE
+   - MESSENGER BARRE SUPÉRIEURE
+   - MESSENGER MENU DES OPTIONS
+   - MESSENGER ONGLETS
+   - MESSENGER ZONE DE CONTENU
+   - MESSENGER LISTE DES CONVERSATIONS
+   - MESSENGER CONVERSATIONS SUR MOBILE
+   - MESSENGER MESSAGES
+   - MESSENGER FORMULAIRE DE RÉPONSE
+   
+   RESPONSIVE ET ANIMATIONS
+   - RESPONSIVE
+   - SIDEBAR SUR ÉCRAN DE FAIBLE HAUTEUR
+   - MESSENGER SUR PETIT ÉCRAN
+   - SWITCHEROO SUR PETIT ÉCRAN
+   - RÉDUCTION DES ANIMATIONS
+   
+   LES PETITES CORRECTIONS ET BOUTONS
+   - PASTILLE DE NOTIFICATION
+   - SWITCHEROO : CENTRAGE DE L’AVATAR ACTIF
+   
+   - BOUTON EN INCLUSIF
+   - SWITCHEROO : PROBLEME DE CLIC MALGRE LE PANNEAU FERMÉ
+   ========================================================== */
+
+/* ============== SWITCHEROO DEPLIANT ========== */
+
+#switcheroo {
+  position: relative !important;
+  overflow: visible !important;
+  z-index: 999 !important;
+}
+
+#switcheroo > .switcheroo__squircles {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* ================== BOUTON D’OUVERTURE ============== */
+
+#switcheroo .cj-switcheroo-toggle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+  height: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--contrastLight) !important;
+  background: var(--neutral) !important;
+  border: 0 !important;
+  border-radius: var(--radius-mini) !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  overflow: visible !important;
+  transition: color .2s ease,
+    background .2s ease,
+    transform .2s ease !important;
+}
+
+#switcheroo .cj-switcheroo-toggle:hover {
+  color: var(--accentClr) !important;
+  background: var(--neutralDarker) !important;
+}
+
+#switcheroo .cj-switcheroo-toggle > i {
+  display: block;
+  font-size: 11px;
+  line-height: 1;
+  transition: transform .25s ease;
+}
+
+#switcheroo.cj-switcheroo-expanded .cj-switcheroo-toggle > i {
+  transform: rotate(180deg);
+}
+
+/* ================== CONTENEUR DU MENU VERTICAL =========== */
+
+#switcheroo .cj-switcheroo-dropdown {
+  position: absolute !important;
+  top: calc(100% + 7px) !important;
+  right: 0 !important;
+  left: auto !important;
+  z-index: 1000 !important;
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: min(320px, calc(100vh - 65px)) !important;
+  margin: 0 !important;
+  background: var(--neutral) !important;
+  border: 1px solid var(--neutralDarker) !important;
+  border-radius: var(--radius-mini) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .25) !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(-6px) scale(.96) !important;
+  transform-origin: top right !important;
+  transition: opacity .2s ease,
+    visibility 0s linear .2s,
+    transform .25s ease !important;
+}
+
+/* Menu ouvert */
+
+#switcheroo.cj-switcheroo-expanded .cj-switcheroo-dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+  transition: opacity .2s ease,
+    visibility 0s linear 0s,
+    transform .25s ease !important;
+}
+
+/* ============== LISTE VERTICALE =========== */
+
+#switcheroo .cj-switcheroo-dropdown__list {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* Comptes et bouton + dans le menu */
+
+#switcheroo .cj-switcheroo-dropdown__list [data-action="switcheroo"],
+#switcheroo .cj-switcheroo-dropdown__list [data-action="open-login"] {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+/* Images des comptes */
+
+#switcheroo .cj-switcheroo-dropdown__list .switcheroo__avatar,
+#switcheroo .cj-switcheroo-dropdown__list .switcheroo__avatar img {
+  display: block !important;
+  object-fit: cover !important;
+  border-radius: var(--radius-mini) !important;
+}
+
+/* Barre de défilement */
+
+#switcheroo .cj-switcheroo-dropdown {
+  scrollbar-width: thin;
+  scrollbar-color: var(--contrastLighter)
+    transparent;
+}
+
+#switcheroo .cj-switcheroo-dropdown::-webkit-scrollbar {
+  width: 3px;
+}
+
+#switcheroo .cj-switcheroo-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#switcheroo .cj-switcheroo-dropdown::-webkit-scrollbar-thumb {
+  background: var(--contrastLighter);
+  border-radius: 10px;
+}
+
+/* Accessibilité */
+
+#switcheroo .cj-switcheroo-toggle:focus-visible {
+  outline: 1px solid var(--accentClr) !important;
+  outline-offset: 2px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #switcheroo .cj-switcheroo-toggle,
+  #switcheroo .cj-switcheroo-toggle > i,
+  #switcheroo .cj-switcheroo-dropdown {
+    transition: none !important;
+  }
+}
+
+/* Espacement vertical des comptes Switcheroo */
+
+#switcheroo .cj-switcheroo-dropdown__list {
+  gap: 9px !important;
+}
+
+#switcheroo .cj-switcheroo-dropdown__list [data-action="switcheroo"],
+#switcheroo .cj-switcheroo-dropdown__list [data-action="open-login"] {
+  flex: 0 0 30px !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  max-height: 30px !important;
+  margin: 0 !important;
+}
+
+/* L’avatar garde sa taille actuelle au centre de la zone */
+
+#switcheroo .cj-switcheroo-dropdown__list .switcheroo__avatar,
+#switcheroo .cj-switcheroo-dropdown__list .switcheroo__avatar img {
+  width: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+  height: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+}
+
+/* Le menu s’adapte aux zones légèrement plus larges */
+
+#switcheroo .cj-switcheroo-dropdown {
+  width: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+  padding: 6px !important;
+}
+
+#switcheroo .cj-switcheroo-dropdown__list {
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+}
+
+/* Switcheroo toujours au-dessus du bouton de bannière */
+
+html body#phpbb > nav#switcheroo.switcheroo,
+html body#phpbb > #switcheroo.switcheroo {
+  z-index: 2147483646 !important;
+  overflow: visible !important;
+}
+
+html body#phpbb > #switcheroo .switcheroo__squircles,
+html body#phpbb > #switcheroo .switcheroo__squircle {
+  z-index: 2147483647 !important;
+}
+
+/* Le bouton animé reste sous le Switcheroo */
+
+button.dark-banner-toggle {
+  z-index: 999 !important;
+}
+
+/* NAVBAR SUPÉRIEURE */
+
+.navbar {
+  position: fixed !important;
+  inset: 0 0 auto !important;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100% !important;
+  height: 55px !important;
+  margin: 0 !important;
+  padding: 9px !important;
+  gap: 0 !important;
+  background: var(--neutral);
+  font-size: 0 !important;
+}
+
+/* Éléments de liste intégrés à la barre */
+
+.navbar > li {
+  display: contents;
+  font-size: 0 !important;
+}
+
+/* Liens de navigation et bouton des notifications */
+
+.navbar a.mainmenu,
+.navbar #fa_notifications {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 36px;
+  max-width: 36px;
+  interpolate-size: allow-keywords;
+  height: 36px;
+  margin: 0 3.5px !important;
+  padding: 0 10px !important;
+  overflow: hidden;
+  color: var(--textColor) !important;
+  background: transparent;
+  border-radius: 7px;
+  font-family: var(--fontone);
+  font-size: 12px !important;
+  line-height: 36px;
+  text-decoration: none;
+  text-transform: lowercase;
+  white-space: nowrap;
+  transition: max-width .72s ease, background-color .3s ease !important;
+}
+
+/* Déploiement du libellé au survol ou au clavier */
+
+.navbar a.mainmenu:hover,
+.navbar a.mainmenu:focus-visible,
+.navbar #fa_notifications:hover,
+.navbar #fa_notifications:focus-visible {
+  max-width: fit-content;
+  background: var(--neutralDark);
+}
+
+/* Masquer les anciennes images de navigation */
+
+.navbar a.mainmenu img {
+  display: none !important;
+}
+
+/* Icônes communes aux liens de la navbar */
+
+.navbar a.mainmenu::before,
+.navbar #fa_notifications::before {
+  content: var(--nav-icon, "");
+  display: grid !important;
+  flex: 0 0 16px !important;
+  place-items: center !important;
+  box-sizing: border-box;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 !important;
+  color: var(--accentClr);
+  font-family: "cappuccicons";
+  font-size: 16px;
+  line-height: 16px !important;
+  text-align: center !important;
+  transition: none !important;
+}
+
+/* Icônes et ordre des liens */
+
+.navbar a[href="/"],
+.navbar a[href="/forum"] {
+  --nav-icon: "";
+  order: 1;
+}
+
+.navbar a[href^="/search"] {
+  --nav-icon: "";
+  order: 2;
+}
+
+.navbar a[href^="/memberlist"] {
+  --nav-icon: "";
+  order: 3;
+}
+
+.navbar a[href^="/profile"],
+.navbar a[href^="/u"] {
+  --nav-icon: "";
+  order: 4;
+}
+
+.navbar a[href^="/privmsg"] {
+  --nav-icon: "";
+  order: 5;
+}
+
+.navbar #fa_notifications {
+  --nav-icon: "";
+  --notif-dot: var(--contrastDark, #302c2a);
+  position: relative !important;
+  order: 6;
+}
+
+.navbar a[href^="/login"]:not(#logout) {
+  --nav-icon: "";
+  order: 7;
+}
+
+.navbar #logout,
+.navbar a[href^="/logout"] {
+  --nav-icon: "";
+  order: 7;
+}
+
+.navbar a[href^="/register"] {
+  --nav-icon: "";
+  order: 8;
+}
+
+/* Liens non affichés dans la navbar */
+
+.navbar a[href^="/faq"],
+.navbar a[href^="/calendar"],
+.navbar a[href^="/groups"],
+.navbar a[href^="/images"],
+.navbar a[href^="/portal"],
+.navbar a[href^="/discover"] {
+  display: none !important;
+}
+
+.navbar #search_menu {
+  font-size: 12px !important;
+}
+
+/* TOOLBAR ET NOTIFICATIONS */
+
+#fa_toolbar {
+  position: fixed !important;
+  inset: 0 auto auto 0 !important;
+  z-index: 999;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+  font-family: var(--font);
+  font-size: var(--little-size);
+}
+
+/* Outils natifs masqués */
+
+#fa_search,
+#fa_share,
+#fa_hide,
+#fa_left {
+  display: none !important;
+}
+
+#fa_welcome,
+#fa_menulist,
+#fa_usermenu,
+.fa_avatar {
+  display: none !important;
+}
+
+/* Conteneur des notifications */
+
+#fa_right {
+  position: fixed !important;
+  inset: 0 0 auto auto !important;
+  z-index: 999;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* Position et dimensions du panneau */
+
+#fa_toolbar #fa_right #notif_list,
+#fa_right.notification #notif_list {
+  position: fixed !important;
+  top: 65px !important;
+  left: 50vw !important;
+  right: auto !important;
+  z-index: 1000 !important;
+  box-sizing: border-box;
+  width: min(380px, calc(100vw - 30px)) !important;
+  max-height: calc(100vh - 80px);
+  margin: 0 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translateX(-50%) !important;
+}
+
+/* Liste des notifications */
+
+ul#notif_list {
+  display: none;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  padding: 5px;
+  background: var(--neutral);
+  border: var(--border);
+  border-radius: 5px;
+}
+
+#fa_right.notification ul#notif_list {
+  display: flex !important;
+}
+
+/* Notification individuelle */
+
+#notif_list li {
+  position: relative;
+  display: block !important;
+  flex: 0 0 auto !important;
+  box-sizing: border-box;
+  width: 100% !important;
+  padding: 5px 20px 5px 5px;
+  border-top: 1px solid var(--neutralDark);
+}
+
+#notif_list li:nth-last-child(2) {
+  border-top: 0;
+}
+
+/* Mise en évidence des notifications non lues */
+
+#notif_list .unread {
+  background: var(--neutralDark);
+  font-weight: 700;
+}
+
+/* Bouton de suppression */
+
+#fa_toolbar #fa_right #notif_list li a.delete {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+}
+
+#fa_toolbar #fa_right #notif_list li a.delete::before {
+  content: "";
+  display: inline-block;
+  color: #ff4f42;
+  font-family: "Ionicons";
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Lien vers toutes les notifications */
+
+#notif_list .see_all {
+  margin-top: 5px;
+  background: var(--neutralDark);
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Notifications affichées en direct */
+
+#fa_toolbar #live_notif {
+  position: fixed;
+  top: 65px;
+  right: 15px !important;
+}
+
+#fa_toolbar #live_notif .fa_notification {
+  padding: 5px;
+  background: rgba(0, 0, 0, .2);
+  border-radius: 5px;
+}
+
+/* SIDEBAR DROITE */
+
+.sidebar {
+  position: fixed !important;
+  top: 50% !important;
+  right: 0 !important;
+  bottom: auto !important;
+  z-index: 99998 !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 55px !important;
+  margin: 0 !important;
+  padding: 9px !important;
+  gap: 7px;
+  overflow: visible !important;
+  background: var(--neutral) !important;
+  border: 1px solid rgba(45, 40, 37, .05) !important;
+  border-right: 0 !important;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0 6px 20px rgba(40, 32, 27, .1) !important;
+  transform: translateY(-50%);
+}
+
+/* Conteneurs internes de la sidebar */
+
+.sidebar_top,
+.sidebar_bottom {
+  display: contents !important;
+}
+
+/* Taille commune réservée aux contrôles principaux. */
+
+.sidebar .switch-theme,
+.sidebar .switch-theme [data-theme-controls],
+.sidebar .color-scheme-toggle,
+.sidebar #switcheroo .forum-layout-toggle,
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle,
+.sidebar #FAM-button,
+.sidebar #FAM-button-open,
+.sidebar .sidebar_bottom > a {
+  display: grid !important;
+  flex: 0 0 36px !important;
+  place-items: center !important;
+  box-sizing: border-box !important;
+  width: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  border-radius: 8px !important;
+}
+
+.sidebar .color-scheme-toggle,
+.sidebar #switcheroo .forum-layout-toggle,
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle,
+.sidebar #FAM-button,
+.sidebar #FAM-button-open,
+.sidebar .sidebar_bottom > a {
+  position: static !important;
+  inset: auto !important;
+  float: none !important;
+  color: var(--accentClr) !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+  font-size: 16px !important;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color .18s ease, background-color .18s ease, transform .18s ease;
+}
+
+/* Survol et navigation au clavier */
+
+.sidebar .color-scheme-toggle:hover,
+.sidebar #switcheroo .forum-layout-toggle:hover,
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle:hover,
+.sidebar #FAM-button:hover,
+.sidebar #FAM-button-open:hover,
+.sidebar .sidebar_bottom > a:hover,
+.sidebar .color-scheme-toggle:focus-visible,
+.sidebar #switcheroo .forum-layout-toggle:focus-visible,
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle:focus-visible,
+.sidebar #FAM-button:focus-visible,
+.sidebar #FAM-button-open:focus-visible,
+.sidebar .sidebar_bottom > a:focus-visible {
+  color: var(--accentClr) !important;
+  background: rgba(189, 105, 54, .13) !important;
+  box-shadow: none !important;
+  transform: translateY(-1px);
+}
+
+/* Alignement des icônes */
+
+.sidebar .color-scheme-toggle > *,
+.sidebar .forum-layout-toggle > *,
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle > i,
+.sidebar #FAM-button > i,
+.sidebar #FAM-button-open > i,
+.sidebar .sidebar_bottom > a > i {
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+/* BOUTON DE THÈME */
+
+.sidebar .switch-theme {
+  position: static !important;
+  inset: auto !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.sidebar .switch-theme > div,
+.sidebar .switch-theme [data-theme-controls] {
+  width: 36px !important;
+  height: 36px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.sidebar .color-scheme-toggle {
+  position: static !important;
+  appearance: none !important;
+}
+
+.sidebar .color-scheme-toggle .icon {
+  display: none !important;
+  place-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Une seule icône : celle du thème actuellement sélectionné. */
+
+[data-color-scheme="light"] .sidebar .color-scheme-toggle .icon.light,
+[data-color-scheme="dark"] .sidebar .color-scheme-toggle .icon.dark {
+  display: grid !important;
+}
+
+.sidebar .color-scheme-toggle .icon > i,
+.sidebar .color-scheme-toggle .icon > i::before {
+  margin: 0 !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+/* SWITCHEROO : CONTRÔLES PRINCIPAUX */
+
+.sidebar #switcheroo {
+  position: static !important;
+  inset: auto !important;
+  z-index: auto !important;
+  display: block !important;
+  box-sizing: border-box;
+  width: 36px !important;
+  min-width: 36px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  transform: none !important;
+}
+
+/* Disposition verticale des contrôles du Switcheroo */
+
+.sidebar #switcheroo > .switcheroo__squircles {
+  position: static !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 36px !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 7px !important;
+  overflow: visible !important;
+}
+
+/* Masquer le logo et les séparateurs natifs */
+
+.sidebar #switcheroo .switcheroo__divider,
+.sidebar #switcheroo .switcheroo__logo {
+  display: none !important;
+}
+
+.sidebar #switcheroo .cj-switcheroo-toggle {
+  position: relative !important;
+  inset: auto !important;
+  overflow: visible !important;
+}
+
+/* Compte actif conservé dans la barre : avatar strictement limité au bouton. */
+
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle:not(.cj-switcheroo-toggle) {
+  overflow: hidden !important;
+}
+
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle:not(.cj-switcheroo-toggle) .switcheroo__avatar,
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle:not(.cj-switcheroo-toggle) .switcheroo__avatar img {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 8px !important;
+}
+
+/* SWITCHEROO : CENTRAGE DE L’AVATAR ACTIF */
+
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle.active {
+  position: relative !important;
+  inset: auto !important;
+  display: grid !important;
+  place-items: center !important;
+  box-sizing: border-box !important;
+  width: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+  transform: none !important;
+}
+
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle.active > a {
+  position: absolute !important;
+  inset: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle.active .switcheroo__avatar,
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle.active .switcheroo__avatar img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: auto !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 8px !important;
+  transform: none !important;
+}
+
+/* Le libellé du bouton d’ouverture ne doit pas sortir de la sidebar. */
+
+.sidebar #switcheroo .cj-switcheroo-toggle > .switcheroo__popper {
+  display: none !important;
+}
+
+/* SWITCHEROO : PANNEAU AVATAR + NOM */
+
+.sidebar #switcheroo .cj-switcheroo-dropdown {
+  position: absolute !important;
+  top: 50% !important;
+  right: calc(100% + 18px) !important;
+  left: auto !important;
+  z-index: 100000 !important;
+  box-sizing: border-box !important;
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 10px !important;
+  overflow: visible !important;
+  color: var(--textColor) !important;
+  background: var(--neutral, #f2efeb) !important;
+  border: 1px solid rgba(90, 75, 68, .12) !important;
+  border-radius: 11px !important;
+  box-shadow: 0 10px 28px rgba(45, 35, 30, .18) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translate(14px, -50%) scale(.97) !important;
+  transform-origin: right center !important;
+  transition: opacity .28s ease, transform .4s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .4s !important;
+}
+
+/* Ouverture du panneau des comptes */
+
+.sidebar #switcheroo.cj-switcheroo-expanded .cj-switcheroo-dropdown,
+.sidebar #switcheroo .cj-switcheroo-toggle[aria-expanded="true"] .cj-switcheroo-dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translate(0, -50%) scale(1) !important;
+  transition: opacity .28s ease, transform .4s cubic-bezier(.22, 1, .36, 1), visibility 0s !important;
+}
+
+/* Liste des comptes */
+
+.sidebar #switcheroo .cj-switcheroo-dropdown__list {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 4px !important;
+  overflow: visible !important;
+  list-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.sidebar #switcheroo .cj-switcheroo-dropdown__list::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Ligne de compte : avatar, nom et suppression */
+
+.sidebar #switcheroo .cj-switcheroo-dropdown__list > .switcheroo__squircle {
+  position: relative !important;
+  inset: auto !important;
+  display: grid !important;
+  flex: 0 0 54px !important;
+  grid-template-columns: 40px minmax(0, 1fr) 20px !important;
+  align-items: center !important;
+  justify-content: stretch !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  height: 54px !important;
+  min-height: 54px !important;
+  max-height: 54px !important;
+  margin: 0 !important;
+  padding: 6px 7px !important;
+  column-gap: 12px !important;
+  overflow: visible !important;
+  color: inherit !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity .25s ease, transform .36s cubic-bezier(.22, 1, .36, 1), background-color .22s ease !important;
+}
+
+.sidebar #switcheroo.cj-switcheroo-expanded .cj-switcheroo-dropdown__list > .switcheroo__squircle,
+.sidebar #switcheroo .cj-switcheroo-toggle[aria-expanded="true"] .cj-switcheroo-dropdown__list > .switcheroo__squircle {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Apparition décalée des comptes */
+
+.sidebar #switcheroo.cj-switcheroo-expanded .cj-switcheroo-dropdown__list > :nth-child(2) {
+  transition-delay: .025s;
+}
+
+.sidebar #switcheroo.cj-switcheroo-expanded .cj-switcheroo-dropdown__list > :nth-child(3) {
+  transition-delay: .05s;
+}
+
+.sidebar #switcheroo.cj-switcheroo-expanded .cj-switcheroo-dropdown__list > :nth-child(4) {
+  transition-delay: .075s;
+}
+
+.sidebar #switcheroo.cj-switcheroo-expanded .cj-switcheroo-dropdown__list > :nth-child(n + 5) {
+  transition-delay: .1s;
+}
+
+.sidebar #switcheroo .cj-switcheroo-dropdown__list > .switcheroo__squircle:hover,
+.sidebar #switcheroo .cj-switcheroo-dropdown__list > .switcheroo__squircle.active {
+  background: rgba(189, 105, 54, .1) !important;
+}
+
+/* Avatar dans la liste des comptes */
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__avatar {
+  display: block !important;
+  grid-column: 1 !important;
+  box-sizing: border-box !important;
+  width: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 7px !important;
+}
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__avatar img {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+  border: 0 !important;
+  border-radius: 7px !important;
+  transition: transform .3s ease !important;
+}
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__squircle:hover .switcheroo__avatar img {
+  transform: scale(1.06) !important;
+}
+
+/* Dans le panneau, l’ancien tooltip devient le nom du compte. */
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__squircle > .switcheroo__popper {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  grid-column: 2 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: inherit !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__squircle > .switcheroo__popper::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Nom du compte et texte tronqué */
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__popper-text {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: inherit !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  text-overflow: ellipsis !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}
+
+/* Icône du bouton d’ajout de compte */
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__squircle--button > i {
+  display: grid !important;
+  grid-column: 1 !important;
+  place-items: center !important;
+  width: 40px !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  margin: 0 !important;
+  color: var(--accentClr) !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+
+/* Suppression d’un compte enregistré */
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__delete {
+  position: static !important;
+  inset: auto !important;
+  z-index: 20 !important;
+  display: grid !important;
+  grid-column: 3 !important;
+  place-items: center !important;
+  box-sizing: border-box !important;
+  width: 20px !important;
+  min-width: 20px !important;
+  max-width: 20px !important;
+  height: 20px !important;
+  min-height: 20px !important;
+  max-height: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #fff !important;
+  background: var(--accentClr, #bd6936) !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  opacity: .65 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  transform: scale(.92) !important;
+  transition: opacity .2s ease, transform .22s ease !important;
+}
+
+.sidebar #switcheroo .cj-switcheroo-dropdown .switcheroo__squircle:hover .switcheroo__delete {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* SWITCHEROO : FENÊTRE DE CONNEXION */
+
+.monomer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+  visibility: hidden;
+  background: rgba(0, 0, 0, .45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease, visibility 0s linear .22s;
+}
+
+/* Fenêtre de connexion centrée */
+
+.monomer-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100002;
+  box-sizing: border-box;
+  visibility: hidden;
+  width: min(430px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 30px;
+  overflow-y: auto;
+  color: var(--textColor);
+  background: var(--neutral);
+  border-radius: 12px;
+  box-shadow: var(--shadowBox);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -47%) scale(.98);
+  transition: opacity .22s ease, transform .3s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .3s;
+}
+
+/* État ouvert de la fenêtre et du voile */
+
+.monomer-overlay.monomer-open,
+.monomer-modal.monomer-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.monomer-modal.monomer-open {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Champs du formulaire de connexion */
+
+.switcheroo__form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+.switcheroo__form-label {
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.switcheroo__form-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px !important;
+  color: var(--textColor);
+  background: var(--neutral);
+  border: var(--border);
+  border-radius: 6px;
+}
+
+/* Bouton de connexion */
+
+.switcheroo__form-button {
+  display: block;
+  margin: 10px auto 0;
+  padding: 7px 13px;
+  color: var(--neutral);
+  background: var(--accentClr);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.switcheroo__form-button:hover {
+  background: var(--contrastLight);
+}
+
+/* Bouton de fermeture */
+
+.monomer-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  color: var(--textColor);
+  background: var(--neutralDark);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* MODE SOMBRE DE LA SIDEBAR ET DU SWITCHEROO */
+
+[data-color-scheme="dark"] .sidebar {
+  background: #111217 !important;
+  border-color: rgba(255, 255, 255, .05) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .4) !important;
+}
+
+[data-color-scheme="dark"] .sidebar .color-scheme-toggle:hover,
+[data-color-scheme="dark"] .sidebar #switcheroo .forum-layout-toggle:hover,
+[data-color-scheme="dark"] .sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle:hover,
+[data-color-scheme="dark"] .sidebar #FAM-button:hover,
+[data-color-scheme="dark"] .sidebar #FAM-button-open:hover,
+[data-color-scheme="dark"] .sidebar .sidebar_bottom > a:hover {
+  color: #6572f3 !important;
+  background: rgba(101, 114, 243, .16) !important;
+}
+
+[data-color-scheme="dark"] .sidebar #switcheroo .cj-switcheroo-dropdown {
+  color: #e7e7eb !important;
+  background: #15161c !important;
+  border-color: rgba(255, 255, 255, .08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .42) !important;
+}
+
+[data-color-scheme="dark"] .sidebar #switcheroo .cj-switcheroo-dropdown__list > .switcheroo__squircle:hover,
+[data-color-scheme="dark"] .sidebar #switcheroo .cj-switcheroo-dropdown__list > .switcheroo__squircle.active {
+  background: rgba(101, 114, 243, .14) !important;
+}
+
+/* FORUMACTIF MESSENGER */
+
+#FAM {
+  --fam-accent: #bd6936;
+  --fam-accent-soft: rgba(189, 105, 54, .12);
+  --fam-hover: rgba(189, 105, 54, .2);
+  --fam-bg: #f3f0ec;
+  --fam-panel: #fff;
+  --fam-text: #302c2a;
+  --fam-muted: #8d827b;
+  --fam-line: rgba(48, 44, 42, .12);
+  position: fixed !important;
+  right: 75px !important;
+  bottom: 18px !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  flex-direction: column;
+  width: min(430px, calc(100vw - 105px)) !important;
+  height: min(610px, calc(100vh - 36px)) !important;
+  max-width: calc(100vw - 90px) !important;
+  max-height: calc(100vh - 36px) !important;
+  overflow: hidden;
+  color: var(--fam-text) !important;
+  background: var(--fam-bg) !important;
+  font-family: inherit !important;
+  transform-origin: right bottom;
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease !important;
+}
+
+/* MESSENGER MODE SOMBRE */
+
+[data-color-scheme="dark"] #FAM {
+  --fam-accent: #6572f3;
+  --fam-accent-soft: rgba(101, 114, 243, .16);
+  --fam-hover: rgba(101, 114, 243, .24);
+  --fam-bg: #17181d;
+  --fam-panel: #202127;
+  --fam-text: #eeeef3;
+  --fam-muted: #999ba8;
+  --fam-line: rgba(255, 255, 255, .09);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, .5) !important;
+}
+
+/* MESSENGER OUVERTURE ET FERMETURE */
+
+#FAM[data-hidden="true"] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transform: translateX(18px) scale(.98) !important;
+}
+
+#FAM[data-hidden="false"] {
+  visibility: visible !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  transform: translateX(0) scale(1) !important;
+}
+
+/* MESSENGER BARRE SUPÉRIEURE */
+
+#FAM-toolbar {
+  flex: 0 0 auto;
+  background: var(--fam-panel) !important;
+  border-bottom: 1px solid var(--fam-line) !important;
+}
+
+#FAM-toolbar-inner {
+  display: flex !important;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 14px !important;
+  gap: 10px;
+}
+
+/* Titre de la messagerie */
+
+#FAM .FAM-maintitle {
+  flex: 1;
+  min-width: 0;
+  margin: 0 !important;
+  overflow: hidden;
+  color: var(--fam-text) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: .06em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Boutons de la barre supérieure */
+
+#FAM .FAM-toolbar-button {
+  display: grid !important;
+  flex: 0 0 34px;
+  place-items: center;
+  width: 34px !important;
+  height: 34px !important;
+  color: var(--fam-accent) !important;
+  background: transparent !important;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background-color .18s ease, transform .18s ease;
+}
+
+#FAM .FAM-toolbar-button:hover {
+  background: var(--fam-accent-soft) !important;
+  transform: translateY(-1px);
+}
+
+/* MESSENGER MENU DES OPTIONS */
+
+#FAM-menu {
+  position: absolute !important;
+  top: 49px !important;
+  right: 12px !important;
+  z-index: 10;
+  display: flex;
+  padding: 7px !important;
+  gap: 5px;
+  background: var(--fam-panel) !important;
+  border: 1px solid var(--fam-line) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .18) !important;
+}
+
+#FAM .FAM-menu-option {
+  display: grid !important;
+  place-items: center;
+  width: 34px !important;
+  height: 34px !important;
+  color: var(--fam-muted) !important;
+  background: transparent !important;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#FAM .FAM-menu-option:hover {
+  color: var(--fam-accent) !important;
+  background: var(--fam-accent-soft) !important;
+}
+
+/* Avatar dans le menu */
+
+#FAM-menu-avatar,
+#FAM-menu-avatar img {
+  width: 28px !important;
+  height: 28px !important;
+  object-fit: cover;
+  border-radius: 7px !important;
+}
+
+/* MESSENGER ONGLETS */
+
+#FAM-tab-container {
+  display: flex !important;
+  align-items: center;
+  flex: 0 0 auto;
+  min-height: 43px;
+  background: var(--fam-panel) !important;
+  border-bottom: 1px solid var(--fam-line) !important;
+}
+
+#FAM-tabs {
+  display: flex !important;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+#FAM-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+#FAM .FAM-tab {
+  display: flex !important;
+  align-items: center;
+  min-width: 130px;
+  max-width: 190px;
+  padding: 11px 13px !important;
+  gap: 8px;
+  color: var(--fam-muted) !important;
+  background: transparent !important;
+  border-right: 1px solid var(--fam-line) !important;
+  cursor: pointer;
+}
+
+#FAM .FAM-tab-active {
+  color: var(--fam-accent) !important;
+  background: var(--fam-accent-soft) !important;
+}
+
+#FAM .FAM-tab:hover,
+#FAM .FAM-tab:focus-visible {
+  color: var(--fam-accent) !important;
+  background: var(--fam-hover) !important;
+}
+
+/* Nom de l’onglet */
+
+#FAM .FAM-tab-name {
+  flex: 1;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Fermeture d’un onglet */
+
+#FAM .FAM-tab-close {
+  opacity: .45;
+  transition: opacity .18s ease;
+}
+
+#FAM .FAM-tab-close:hover {
+  opacity: 1;
+}
+
+/* Ajout d’un onglet */
+
+#FAM-tab-add {
+  display: grid !important;
+  flex: 0 0 42px;
+  place-items: center;
+  height: 42px;
+  color: var(--fam-accent) !important;
+  cursor: pointer;
+}
+
+#FAM-tab-add:hover {
+  background: var(--fam-accent-soft) !important;
+}
+
+/* MESSENGER ZONE DE CONTENU */
+
+#FAM .FAM-container-content {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+#FAM-content {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 6px !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  background: var(--fam-bg) !important;
+  scrollbar-color: var(--fam-accent) transparent;
+  scrollbar-width: thin;
+}
+
+/* Barre de défilement */
+
+#FAM-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+#FAM-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#FAM-content::-webkit-scrollbar-thumb {
+  background: var(--fam-accent);
+  border-radius: 10px;
+}
+
+/* MESSENGER LISTE DES CONVERSATIONS */
+
+#FAM .FAM-chat {
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 2px;
+  width: 100%;
+  min-height: 78px;
+  height: auto !important;
+  margin: 0 0 6px !important;
+  padding: 8px 10px !important;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: var(--fam-text) !important;
+  background: var(--fam-panel) !important;
+  border: 1px solid transparent !important;
+  border-radius: 13px !important;
+  cursor: pointer;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+#FAM .FAM-chat:last-child {
+  margin-bottom: 0 !important;
+}
+
+#FAM .FAM-chat:hover,
+#FAM .FAM-chat:focus-visible {
+  background: var(--fam-hover) !important;
+  transform: translateX(3px);
+  border-color: transparent !important;
+}
+
+#FAM .FAM-chat:hover .FAM-chat-title,
+#FAM .FAM-chat:focus-visible .FAM-chat-title {
+  color: var(--fam-accent) !important;
+}
+
+/* Éléments natifs masqués dans les conversations */
+
+#FAM .FAM-chat-icon {
+  display: none !important;
+}
+
+#FAM .FAM-topic-name {
+  display: none !important;
+}
+
+/* Avatar de la conversation */
+
+#FAM .FAM-chat-avatar {
+  position: static !important;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-self: center;
+  width: 46px !important;
+  height: 46px !important;
+  margin: 0 !important;
+  overflow: hidden;
+  border-radius: 11px;
+}
+
+#FAM .FAM-chat-avatar img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+/* Contenu et informations de la conversation */
+
+#FAM .FAM-chat-content {
+  grid-column: 2;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  overflow: hidden;
+}
+
+#FAM .FAM-chat-title,
+#FAM .FAM-chat-date {
+  position: static !important;
+  left: auto !important;
+  width: auto !important;
+  min-width: 0;
+  padding: 0 !important;
+  white-space: normal;
+}
+
+/* Titre de la conversation */
+
+#FAM .FAM-chat-title {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px !important;
+  line-height: 1.15 !important;
+  font-weight: 700;
+}
+
+#FAM .FAM-chat-date {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden !important;
+  font-size: 13.5px !important;
+  line-height: 1.3 !important;
+  opacity: .78;
+}
+
+#FAM .FAM-chat-meta-main {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#FAM .FAM-chat-topic {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#FAM .FAM-chat-postdate {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Nom de la dernière personne à avoir posté */
+
+#FAM .FAM-chat-author {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#FAM .FAM-chat-author-label {
+  font-weight: 600;
+}
+
+#FAM .FAM-chat-separator {
+  padding: 0 .35em;
+  opacity: .55;
+}
+
+/* MESSENGER CONVERSATIONS SUR MOBILE */
+
+@media (max-width: 520px) {
+  #FAM .FAM-chat {
+    grid-template-columns: 42px minmax(0, 1fr);
+    min-height: 74px;
+    padding: 7px 8px !important;
+  }
+
+  #FAM .FAM-chat-avatar {
+    width: 42px !important;
+    height: 42px !important;
+  }
+}
+
+/* MESSENGER MESSAGES */
+
+#FAM .FAM-msg {
+  display: grid !important;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: end;
+  margin: 12px 0 !important;
+  gap: 9px;
+}
+
+#FAM .FAM-msg-avatar,
+#FAM .FAM-msg-avatar img {
+  width: 34px !important;
+  height: 34px !important;
+  object-fit: cover;
+  border-radius: 10px !important;
+}
+
+#FAM .FAM-msg-box {
+  min-width: 0;
+}
+
+/* Nom de la personne et bulle du message */
+
+#FAM .FAM-msg-name {
+  margin: 0 0 4px 4px;
+  color: var(--fam-accent) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+#FAM .FAM-msg-content {
+  padding: 10px 12px !important;
+  color: var(--fam-text) !important;
+  background: var(--fam-panel) !important;
+  border: 1px solid var(--fam-line) !important;
+  border-radius: 13px 13px 13px 4px !important;
+}
+
+#FAM .FAM-msg-text {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+}
+
+/* Date du message */
+
+#FAM .FAM-msg-date {
+  margin: 4px 0 0 4px;
+  color: var(--fam-muted) !important;
+  font-size: 11px !important;
+}
+
+/* Actions sur un message */
+
+#FAM .FAM-msg-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+  gap: 4px;
+}
+
+#FAM .FAM-msg-button {
+  display: grid !important;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  color: var(--fam-muted) !important;
+  background: transparent !important;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+#FAM .FAM-msg-button:hover {
+  color: var(--fam-accent) !important;
+  background: var(--fam-accent-soft) !important;
+}
+
+/* MESSENGER FORMULAIRE DE RÉPONSE */
+
+#FAM-actions {
+  flex: 0 0 auto;
+  padding: 10px !important;
+  background: var(--fam-panel) !important;
+  border-top: 1px solid var(--fam-line) !important;
+}
+
+#FAM input,
+#FAM textarea,
+#FAM select {
+  box-sizing: border-box;
+  color: var(--fam-text) !important;
+  background: var(--fam-bg) !important;
+  border: 1px solid var(--fam-line) !important;
+  border-radius: 10px !important;
+  outline: none !important;
+}
+
+#FAM textarea {
+  padding: 10px 12px !important;
+  resize: none;
+}
+
+/* Champ actif */
+
+#FAM input:focus,
+#FAM textarea:focus,
+#FAM select:focus {
+  border-color: var(--fam-accent) !important;
+  box-shadow: 0 0 0 3px var(--fam-accent-soft) !important;
+}
+
+/* Boutons d’action de la messagerie */
+
+#FAM button,
+#FAM .FAM-button,
+#FAM .FAM-button-large {
+  color: #fff !important;
+  background: var(--fam-accent) !important;
+  border: 0 !important;
+  border-radius: 9px !important;
+  box-shadow: none !important;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+
+/* SIDEBAR SUR ÉCRAN DE FAIBLE HAUTEUR */
+
+@media (max-height: 600px) {
+  .sidebar {
+    top: 60px !important;
+    bottom: 10px !important;
+    gap: 5px;
+    transform: none;
+  }
+
+  .sidebar #switcheroo > .switcheroo__squircles {
+    gap: 5px !important;
+  }
+
+  .sidebar #switcheroo .cj-switcheroo-dropdown {
+    top: 0 !important;
+    transform: translateX(14px) scale(.97) !important;
+    transform-origin: right top !important;
+  }
+
+  .sidebar #switcheroo.cj-switcheroo-expanded .cj-switcheroo-dropdown,
+  .sidebar #switcheroo .cj-switcheroo-toggle[aria-expanded="true"] .cj-switcheroo-dropdown {
+    transform: translateX(0) scale(1) !important;
+  }
+}
+
+/* MESSENGER SUR PETIT ÉCRAN */
+
+@media (max-width: 650px) {
+  #FAM {
+    right: 68px !important;
+    bottom: 10px !important;
+    width: calc(100vw - 82px) !important;
+    height: calc(100vh - 20px) !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* SWITCHEROO SUR PETIT ÉCRAN */
+
+@media (max-width: 420px) {
+  .sidebar #switcheroo .cj-switcheroo-dropdown {
+    width: calc(100vw - 100px) !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 100px) !important;
+  }
+}
+
+/* RÉDUCTION DES ANIMATIONS */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar a.mainmenu,
+  .navbar a.mainmenu::before,
+  .sidebar #switcheroo .cj-switcheroo-dropdown,
+  .sidebar #switcheroo .cj-switcheroo-dropdown__list > .switcheroo__squircle,
+  #FAM {
+    transition-duration: .01ms !important;
+  }
+}
+
+/* PASTILLE DE NOTIFICATION */
+
+.navbar #fa_notifications #notif_unread {
+  display: none !important;
+}
+
+/* Apparence de la pastille */
+
+.navbar #fa_notifications::after {
+  content: "";
+  position: absolute !important;
+  top: 5px !important;
+  left: 23px !important;
+  z-index: 5;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  background: var(--notif-dot);
+  border: 2px solid var(--neutral);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition: opacity .2s ease, transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Apparition de la pastille en présence de notifications */
+
+.navbar #fa_notifications.unread::after,
+.navbar #fa_notifications:has(#notif_unread:not(:empty))::after {
+  opacity: 1;
+  transform: scale(1);
+  animation: cj-notification-pop .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Couleur de la pastille en mode sombre */
+
+[data-color-scheme="dark"] .navbar #fa_notifications {
+  --notif-dot: var(--contrastLight, #f4f1ed);
+}
+
+/* Animation de la pastille */
+
+@keyframes cj-notification-pop {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* BOUTON EN INCLUSIF */
+
+#replaceButton {
+  appearance: none;
+  box-sizing: border-box;
+  padding: 10px 15px !important;
+  border: none;
+  border-radius: var(--radius-normal, 5px);
+  background: var(--neutralDarker);
+  color: var(--contrastLight);
+  font-family: var(--font);
+  font-size: var(--normal-size);
+  font-weight: 600;
+  line-height: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Survol du bouton inclusif */
+
+#replaceButton:hover:not(:disabled) {
+  color: var(--accentClr);
+}
+
+/* Repère de navigation au clavier */
+
+#replaceButton:focus-visible {
+  outline: 2px solid var(--accentClr);
+  outline-offset: 3px;
+}
+
+/* Bouton inclusif pendant le chargement */
+
+#replaceButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* SWITCHEROO : PROBLEME DE CLIC MALGRE LE PANNEAU FERMÉ */
+
+.sidebar #switcheroo:not(.cj-switcheroo-expanded) .cj-switcheroo-toggle:not([aria-expanded="true"]) > .cj-switcheroo-dropdown {
+  display: none !important;
+}
+
+/* Positionner le panneau par rapport à son icône */
+
+.sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle.cj-switcheroo-toggle {
+  position: relative !important;
+}
+
+
+/* INCLUSIF : visible uniquement avec le formulaire de réponse */
+#replaceButton {
+    display: none !important;
+}
+
+#replaceButton.cj-inclusif-disponible {
+    display: inline-block !important;
+    position: static !important;
+    float: none !important;
+    margin: 0 0 0 6px !important;
+    vertical-align: middle;
+}
+
+/* NOTIFICATIONS : inverser l’ordre actuel */
+#fa_right.notification ul#notif_list {
+    flex-direction: column-reverse !important;
+}
+
+/* Garder « Voir toutes les notifications » en haut */
+#notif_list > li.see_all,
+#notif_list > li:has(.see_all) {
+    order: 1;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#replaceButton.cj-inclusif-disponible {
+    margin-left: 12px !important;
+}
