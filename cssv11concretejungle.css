@@ -6170,3 +6170,9 @@ body.index-columns .forum_stats span.forum-stat-long,
 }
 
 
+/* BLOGS — supprimer les bordures extérieures */
+.cjmsdiary {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
