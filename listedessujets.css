@@ -77,3 +77,28 @@
   .main_forum .bloglist .bloglist_details {flex-basis:64px!important;width:64px!important;text-align:left!important;}
   .main_forum :is(.topicslist_row > .topicslist-lastpost,.bloglist .bloglist-lastpost) {flex:1 1 100px!important;width:auto!important;}
 }
+
+
+/* À compteurs Myspace marqués par le script. */
+.main_forum .bloglist .bloglist_details.cj-myspace-counts {
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-end!important;
+  justify-content:center!important;
+  gap:2px!important;
+  flex:0 0 88px!important;
+  width:88px!important;
+  text-align:right!important;
+}
+.main_forum .bloglist .cj-myspace-counts > .cj-myspace-count-line {
+  display:block!important;
+  white-space:nowrap!important;
+  margin:0!important;
+  padding:0!important;
+  font:inherit!important;
+}
+.main_forum .bloglist .cj-myspace-count-line strong {
+  font:inherit!important;
+  color:inherit!important;
+}
+
