@@ -1,0 +1,79 @@
+/* LISTE DES SUJETS UNIQUEMENT */
+.main_forum :is(.topicslist_row,.bloglist) {
+  --cj-list-image:82px;
+  position:relative!important;box-sizing:border-box!important;
+  display:flex!important;align-items:center!important;flex-wrap:nowrap!important;
+  gap:12px!important;min-height:84px!important;height:auto!important;
+  padding:12px 14px 12px calc(var(--cj-list-image) + 14px)!important;
+  margin:0 0 9px!important;background:var(--neutral)!important;
+  color:var(--textColor);border:0!important;border-radius:var(--radius-medium)!important;
+  box-shadow:none!important;
+}
+.main_forum :is(.topicslist_row,.bloglist):last-child {margin-bottom:0!important;}
+/* La première image est l'état natif du sujet, jamais l'avatar du membre. */
+.main_forum .topicslist_row > .topicslist-img,
+.main_forum .bloglist .bloglist_infos > div:first-child > .mini_img {
+  position:absolute!important;inset:0 auto 0 0!important;display:block!important;
+  width:var(--cj-list-image)!important;height:100%!important;
+  margin:0!important;padding:0!important;float:none!important;
+  border:0!important;border-radius:var(--radius-medium) 0 0 var(--radius-medium)!important;
+  overflow:hidden!important;background:var(--neutralTwo)!important;
+}
+.main_forum .topicslist_row > .topicslist-img img,
+.main_forum .bloglist .bloglist_infos > div:first-child > .mini_img img {
+  display:block!important;width:100%!important;height:100%!important;
+  max-width:none!important;max-height:none!important;margin:0!important;
+  object-fit:cover!important;object-position:center!important;border:0!important;border-radius:0!important;
+}
+.main_forum .topicslist_row > .topicslist_infos {
+  flex:1 1 0!important;min-width:0!important;width:auto!important;margin:0!important;padding:0!important;
+}
+.main_forum .bloglist > .bloglist_infos {
+  position:static!important;display:flex!important;align-items:center!important;
+  flex:1 1 auto!important;gap:12px!important;min-width:0!important;width:100%!important;
+  padding:0!important;margin:0!important;
+}
+.main_forum .bloglist .bloglist_infos > div:first-child {
+  position:static!important;flex:1 1 0!important;min-width:0!important;margin:0!important;padding:0!important;
+}
+.main_forum :is(.topicslist_row,.bloglist) a.topictitle {
+  display:inline!important;max-width:none!important;white-space:normal!important;
+  overflow-wrap:anywhere!important;text-overflow:clip!important;
+  font:600 var(--normal-size)/1.4 var(--font)!important;color:var(--textColorAccent)!important;
+}
+.main_forum .bloglist .bloglist-crea {margin:3px 0 0!important;font-size:var(--little-size)!important;}
+.main_forum .bloglist .bloglist_infos2 {
+  display:flex!important;align-items:center!important;flex:0 0 auto!important;
+  width:auto!important;gap:10px!important;padding:0!important;margin:0!important;
+}
+.main_forum :is(.topicslist_row > .topicslist-stats,.bloglist .bloglist_details) {
+  flex:0 0 74px!important;width:74px!important;margin:0!important;padding:0!important;
+  text-align:right!important;font:400 var(--little-size)/1.6 var(--font)!important;
+}
+.main_forum .bloglist .bloglist_details l {font-weight:600;}
+.main_forum :is(.topicslist_row > .topicslist-avatar-lastpost,.bloglist .bloglist_ava) {
+  flex:0 0 36px!important;width:36px!important;height:42px!important;margin:0!important;padding:0!important;
+  border:0!important;border-radius:var(--radius-normal)!important;overflow:hidden!important;
+}
+.main_forum :is(.topicslist_row .topicslist-avatar-lastpost,.bloglist .bloglist_ava) img {
+  display:block!important;width:36px!important;height:42px!important;
+  max-width:none!important;max-height:none!important;object-fit:cover!important;
+  border-radius:var(--radius-normal)!important;margin:0!important;
+}
+.main_forum :is(.topicslist_row > .topicslist-lastpost,.bloglist .bloglist-lastpost) {
+  flex:0 0 155px!important;width:155px!important;min-width:0!important;
+  margin:0!important;padding:0!important;font:400 var(--little-size)/1.6 var(--font)!important;
+  overflow-wrap:anywhere;
+}
+/* Une description éventuelle reste visible sous la ligne. */
+.main_forum .topicslist_row:has(> .topicslist-description) {flex-wrap:wrap!important;}
+.main_forum .topicslist_row > .topicslist-description {flex-basis:100%;min-width:0;}
+@media(max-width:700px) {
+  .main_forum :is(.topicslist_row,.bloglist) {--cj-list-image:65px;gap:8px!important;padding-right:10px!important;}
+  .main_forum .topicslist_row {flex-wrap:wrap!important;}
+  .main_forum .topicslist_row > .topicslist_infos {flex-basis:calc(100% - 90px)!important;}
+  .main_forum .bloglist > .bloglist_infos {flex-direction:column!important;align-items:stretch!important;}
+  .main_forum .bloglist .bloglist_infos2 {flex-wrap:wrap!important;justify-content:flex-start!important;}
+  .main_forum .bloglist .bloglist_details {flex-basis:64px!important;width:64px!important;text-align:left!important;}
+  .main_forum :is(.topicslist_row > .topicslist-lastpost,.bloglist .bloglist-lastpost) {flex:1 1 100px!important;width:auto!important;}
+}
