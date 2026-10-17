@@ -325,3 +325,17 @@ body:is(.tinder-auto-topic, [data-tinder-mode="active"]) .cj-topic, body:has(.ti
 @media(max-width:480px){.main_forum .cj-page-toolbar > .right {margin-left:0;}}
 
 
+.main_forum.cj-blog-page :is(.blog_details, .sms-edit) {
+  justify-content: flex-end !important;
+  text-align: right !important;
+}
+
+.main_forum.cj-blog-page :is(.blog_details, .sms-edit)
+:is(.profile-icons, .like_button) {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  float: none !important;
+  justify-content: flex-end !important;
+}
