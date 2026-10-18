@@ -39,7 +39,8 @@
    - SWITCHEROO : CENTRAGE DE L’AVATAR ACTIF
    
    - BOUTON EN INCLUSIF
-   - SWITCHEROO : PROBLEME DE CLIC MALGRE LE PANNEAU FERMÉ
+   - SWITCHEROO : PROBLEME DE CLIC MALGRE LE PANNEAU FERMÉ   
+   - NAVIGATION téléphone
    ========================================================== */
 
 /* ============== SWITCHEROO DEPLIANT ========== */
@@ -2058,4 +2059,84 @@ ul#notif_list {
 
 #replaceButton.cj-inclusif-disponible {
     margin-left: 12px !important;
+}
+
+
+
+
+/* NAVIGATION téléphone */
+@media (max-width: 768px) {
+
+  /* Barre supérieure */
+  .navbar {
+    height: auto !important;
+    min-height: 56px !important;
+    padding: 6px !important;
+    flex-wrap: wrap !important;
+    gap: 2px !important;
+  }
+
+  .navbar a.mainmenu,
+  .navbar #fa_notifications {
+    flex: 0 0 44px !important;
+    width: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    height: 44px !important;
+    margin: 0 !important;
+    padding: 0 12px !important;
+    gap: 12px !important;
+    line-height: 44px !important;
+  }
+
+  .navbar a.mainmenu::before,
+  .navbar #fa_notifications::before {
+    flex: 0 0 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 20px !important;
+    line-height: 20px !important;
+  }
+
+  /* Barre latérale */
+  .sidebar {
+    width: 60px !important;
+    padding: 7px !important;
+    gap: 7px !important;
+  }
+
+  .sidebar .switch-theme,
+  .sidebar .switch-theme > div,
+  .sidebar .switch-theme [data-theme-controls],
+  .sidebar .color-scheme-toggle,
+  .sidebar #switcheroo .forum-layout-toggle,
+  .sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle,
+  .sidebar #FAM-button,
+  .sidebar #FAM-button-open,
+  .sidebar .sidebar_bottom > a {
+    flex: 0 0 44px !important;
+    width: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    font-size: 20px !important;
+  }
+
+  .sidebar #switcheroo,
+  .sidebar #switcheroo > .switcheroo__squircles {
+    width: 44px !important;
+    min-width: 44px !important;
+  }
+
+  .sidebar .color-scheme-toggle .icon > i,
+  .sidebar .color-scheme-toggle .icon > i::before,
+  .sidebar .forum-layout-toggle > i,
+  .sidebar #switcheroo > .switcheroo__squircles > .switcheroo__squircle > i,
+  .sidebar #FAM-button > i,
+  .sidebar #FAM-button-open > i,
+  .sidebar .sidebar_bottom > a > i {
+    font-size: 20px !important;
+  }
 }
