@@ -102,3 +102,16 @@
   color:inherit!important;
 }
 
+
+
+/* En-têtes des listes : occuper toute la largeur disponible */
+.main_forum .cj-page-head {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  float: none !important;
+  align-self: stretch !important;
+  justify-self: stretch !important;
+}
