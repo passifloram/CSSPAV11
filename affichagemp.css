@@ -256,3 +256,11 @@ form[name="privmsg_list"] .mp_infos > span {
 form[name="privmsg_list"] .mp_infos > span * {
   font-size: inherit !important;
 }
+
+
+/* MP — conserver la hauteur définie dans le BBCode */
+body#phpbb .message > .message_content.postbody.content img {
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+}
