@@ -258,9 +258,8 @@ form[name="privmsg_list"] .mp_infos > span * {
 }
 
 
-/* MP — conserver la hauteur définie dans le BBCode */
+/* MP — respecter les dimensions définies dans les messages */
 body#phpbb .message > .message_content.postbody.content img {
-  width: auto !important;
-  max-width: 100% !important;
-  object-fit: contain !important;
+  max-width: 100%;
+  object-fit: contain;
 }
