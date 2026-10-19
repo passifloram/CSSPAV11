@@ -636,3 +636,77 @@
     max-height: 180px;
   }
 }
+
+
+/* Même point de départ pour les trois onglets */
+.cj-fiche .cj-onglets > br,
+.cj-fiche .cj-onglets > .cj-onglets-contenu > br,
+.cj-fiche .fp-entete > br,
+.cj-fiche .fp-entete > div > br {
+  display: none !important;
+}
+
+.cj-fiche .cj-onglets > .barcw {
+  margin-bottom: 0 !important;
+}
+
+.cj-fiche .cj-onglets > .cj-onglets-contenu {
+  margin: 0 !important;
+  padding: 24px 0 0 !important;
+}
+
+/* Informations et Behind me : mêmes dimensions */
+.cj-fiche .cj-onglets-contenu > .fp-entete {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 0;
+  margin: 0 0 24px !important;
+  padding: 0 0 24px !important;
+}
+
+.cj-fiche .fp-entete > .iconi {
+  float: none;
+  flex: 0 0 112px;
+  width: 112px;
+  height: 112px;
+  margin: 0 !important;
+}
+
+.cj-fiche .fp-entete > div {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.cj-fiche .fp-entete t1 {
+  display: block;
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  line-height: 1.15 !important;
+}
+
+.cj-fiche .fp-entete rr3 {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Plotlines commence au même niveau que les portraits */
+.cj-fiche .cj-onglets-contenu > .cadre_lou3 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 620px) {
+  .cj-fiche .cj-onglets-contenu > .fp-entete {
+    gap: 16px;
+  }
+
+  .cj-fiche .fp-entete > .iconi {
+    flex-basis: 80px;
+    width: 80px;
+    height: 80px;
+  }
+}
