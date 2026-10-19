@@ -574,3 +574,65 @@
     margin-left: 14px;
   }
 }
+
+
+/* PLOTLINES — rétablir les deux blocs côte à côte */
+.cj-fiche .cadre_lou3 {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Neutralise les retours ajoutés par l’éditeur du forum */
+.cj-fiche .cadre_lou3 > br {
+  display: none !important;
+}
+
+.cj-fiche .cadre_lou3 > .hist_lou {
+  flex: 1 1 0%;
+  width: auto !important;
+  min-width: 0;
+  height: 380px;
+  min-height: 0;
+  max-height: 380px;
+  padding: 22px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fp-second) var(--fp-panel);
+}
+
+.cj-fiche .cadre_lou3 > img {
+  position: static;
+  float: none;
+  flex: 0 0 145px;
+  width: 145px !important;
+  height: 380px;
+  min-height: 0;
+  max-height: 380px;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 620px) {
+  .cj-fiche .cadre_lou3 {
+    flex-direction: column;
+  }
+
+  .cj-fiche .cadre_lou3 > .hist_lou {
+    flex: auto;
+    width: 100% !important;
+  }
+
+  .cj-fiche .cadre_lou3 > img {
+    flex: none;
+    width: 100% !important;
+    height: 180px;
+    max-height: 180px;
+  }
+}
