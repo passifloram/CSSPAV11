@@ -1074,6 +1074,11 @@
 
 
 :root { --cj-legacy-v2-ready: 1; }
+.cj-legacy-v2 .hist_lou > t5 { color:var(--fp-accent); }
+.cj-legacy-v2 .hist_lou > bg1 {
+  background:var(--fp-accent);
+  color:var(--cjf-inverse, var(--neutral));
+}
 .cj-legacy-v2 .cj-v2-hidden { display:none!important; }
 .cj-legacy-v2 .cj-v2-contents { display:contents!important; }
 .cj-legacy-v2 .cj-v2-inherit {
