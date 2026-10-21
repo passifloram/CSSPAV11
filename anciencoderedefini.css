@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
-/* FICHES DE PRÉSENTATION — feuille indépendante.
+/* FICHES DE PRÉSENTATION avec une feuille indépendante.
    Ancien conteneur : .prez (compatibilité, ne plus employer dans les nouveaux modèles).
    Nouveau conteneur : .fiche-presentation (sans accent).
-   Les deux classes partagent chaque règle ; aucune modification du fichier novemberwitch.
-   Classes internes conservées : fiche-fond, fiche-titre, fiche-st, fiche-infos, etc.
+   Les deux classes partagent chaque règle et on conserve les classes 
+   internes type fiche-fond, fiche-titre, fiche-st, fiche-infos, etc.
 */
 
 /*------ PRESENTATIONS ---------*/
@@ -502,4 +502,5 @@ html:not([data-color-scheme="dark"]) body:not([data-color-scheme="dark"]) .main_
   border: 0 !important;
   box-shadow: none !important;
 }
+
 
